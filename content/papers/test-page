@@ -1,0 +1,26 @@
+---
+title: "Attention Is All You Need"
+authors: ["Vaswani et al."]
+year: 2017
+venue: "NeurIPS"
+url: "https://arxiv.org/abs/1706.03762"
+tags: ["transformers", "attention", "nlp"]
+dateRead: "2026-01-13"
+rating: 5
+---
+
+## TL;DR
+Transformer replaces recurrence with self-attention; enables parallelism and strong scaling.
+
+## Problem
+RNNs are slow and struggle with long-range dependencies.
+
+## Key idea
+Self-attention + positional encodings + multi-head attention.
+
+## What I found interesting
+- ...
+- ...
+
+## Questions / follow-ups
+- ...
