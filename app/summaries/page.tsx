@@ -1,15 +1,15 @@
 const summaryTemplates = [
   {
     id: "paper-one",
-    title: "Paper Summary Template",
+    title: "Reading Note Template",
     description:
-      "Use this space to capture the essentials and write a clear narrative summary.",
+      "Use this space to capture the essentials and write a clear recap.",
   },
   {
     id: "paper-two",
-    title: "Additional Summary",
+    title: "Another Reading Note",
     description:
-      "Duplicate this template for each document you want to summarize.",
+      "Duplicate this template for each reading I want to capture.",
   },
 ];
 
@@ -19,15 +19,15 @@ export default function SummariesPage() {
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-16">
         <div className="flex flex-col gap-4">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-500">
-            Summaries Workspace
+            Notes Workspace
           </p>
           <h1 className="text-4xl font-semibold text-zinc-900 sm:text-5xl">
-            Draft research summaries with consistent structure.
+            Draft my reading notes with consistent structure.
           </h1>
           <p className="max-w-2xl text-lg text-zinc-600">
-            Each section below is a prepared page for storing paper metadata and
-            drafting paragraph-length summaries. Add as many templates as you
-            need when reviewing new papers.
+            Each section below is a prepared page for storing reading details
+            and drafting paragraph-length notes. I add a new template whenever
+            I capture another source.
           </p>
         </div>
         <div className="flex flex-col gap-8">
@@ -45,12 +45,12 @@ export default function SummariesPage() {
               <div className="mt-6 grid gap-6 lg:grid-cols-2">
                 <div className="rounded-xl border border-zinc-100 bg-zinc-50 p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                    Paper Details
+                    Reading Details
                   </p>
                   <dl className="mt-4 space-y-4 text-sm text-zinc-700">
                     <div>
                       <dt className="font-semibold text-zinc-900">Title</dt>
-                      <dd className="mt-1 text-zinc-600">[Add paper title]</dd>
+                      <dd className="mt-1 text-zinc-600">[Add title]</dd>
                     </div>
                     <div>
                       <dt className="font-semibold text-zinc-900">Link</dt>
@@ -62,30 +62,30 @@ export default function SummariesPage() {
                     </div>
                     <div>
                       <dt className="font-semibold text-zinc-900">
-                        Publication Venue
+                        Source
                       </dt>
-                      <dd className="mt-1 text-zinc-600">[Add venue]</dd>
+                      <dd className="mt-1 text-zinc-600">[Add source]</dd>
                     </div>
                     <div>
                       <dt className="font-semibold text-zinc-900">
-                        Summary Date
+                        Note Date
                       </dt>
-                      <dd className="mt-1 text-zinc-600">[Add date]</dd>
+                      <dd className="mt-1 text-zinc-600">[Add note date]</dd>
                     </div>
                   </dl>
                 </div>
                 <div className="rounded-xl border border-zinc-100 bg-zinc-50 p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                    Paragraph Summary
+                    Reflection
                   </p>
                   <div className="mt-4 space-y-4 text-sm text-zinc-600">
                     <p>
-                      [Write a paragraph that describes the problem statement,
-                      methodology, and why the paper matters.]
+                      [Write a paragraph describing the main ideas and why this
+                      reading matters to me.]
                     </p>
                     <p>
-                      [Add a second paragraph for key results, evaluation
-                      details, and how the paper relates to other work.]
+                      [Add a second paragraph for key takeaways, examples, or
+                      how it connects to other things I have read.]
                     </p>
                     <p>
                       [Capture any insights, open questions, or follow-up ideas
