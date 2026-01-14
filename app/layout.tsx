@@ -14,8 +14,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ML Research Summaries",
-  description: "A workspace for drafting and organizing research paper summaries.",
+  title: "My Reading Notes",
+  description: "A personal place for drafting and organizing reading notes.",
 };
 
 export default function RootLayout({
@@ -33,9 +33,11 @@ export default function RootLayout({
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                  ML Research Summaries
+                  My Reading Notes
                 </p>
-                <p className="text-lg font-semibold text-zinc-900">Research Writing Hub</p>
+                <p className="text-lg font-semibold text-zinc-900">
+                  A personal space for reading notes
+                </p>
               </div>
               <nav className="flex items-center gap-4 text-sm font-medium text-zinc-600">
                 <Link
@@ -48,7 +50,7 @@ export default function RootLayout({
                   className="rounded-full px-4 py-2 transition hover:bg-zinc-100 hover:text-zinc-900"
                   href="/summaries"
                 >
-                  Summaries
+                  Notes
                 </Link>
               </nav>
             </div>
