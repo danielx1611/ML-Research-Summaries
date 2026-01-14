@@ -33,10 +33,10 @@ export default function RootLayout({
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                  My Reading Notes
+                  Machine Learning Notes
                 </p>
                 <p className="text-lg font-semibold text-zinc-900">
-                  A personal space for reading notes
+                  Summaries on machine learning papers
                 </p>
               </div>
               <nav className="flex items-center gap-4 text-sm font-medium text-zinc-600">

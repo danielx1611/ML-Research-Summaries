@@ -7,11 +7,10 @@ export default function Home() {
             Workspace
           </p>
           <h1 className="text-4xl font-semibold text-zinc-900 sm:text-5xl">
-            A calm place to draft and organize my reading notes.
+            A place to draft and organize my paper summaries.
           </h1>
           <p className="max-w-2xl text-lg text-zinc-600">
-            This site is my private space for tracking what I read and what I
-            take away from it. I use the notes page to record source details,
+            This site is for summarizing research papers I read. I use the notes page to record source details,
             capture key takeaways, and keep the context I want to revisit later.
           </p>
         </div>
@@ -46,10 +45,10 @@ export default function Home() {
         </div>
         <div className="rounded-2xl border border-dashed border-emerald-200 bg-emerald-50/50 p-8">
           <h2 className="text-2xl font-semibold text-emerald-950">
-            Ready to draft a first note?
+            Wish to see the most recent summaries?
           </h2>
           <p className="mt-3 text-sm text-emerald-800">
-            Head to the notes workspace to start capturing reading details and
+            Head to the notes workspace to start viewing reading details and
             observations.
           </p>
         </div>

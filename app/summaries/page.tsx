@@ -22,11 +22,11 @@ export default function SummariesPage() {
             Notes Workspace
           </p>
           <h1 className="text-4xl font-semibold text-zinc-900 sm:text-5xl">
-            Draft my reading notes with consistent structure.
+            Clear and concise paper summaries.
           </h1>
           <p className="max-w-2xl text-lg text-zinc-600">
             Each section below is a prepared page for storing reading details
-            and drafting paragraph-length notes. I add a new template whenever
+            and drafting paragraph-length notes. I add a new entry whenever
             I capture another source.
           </p>
         </div>
