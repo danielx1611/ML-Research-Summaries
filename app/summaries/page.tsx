@@ -1,15 +1,34 @@
 const summaryTemplates = [
   {
     id: "paper-one",
-    title: "Reading Note Template",
+    title:
+      "Forecasting >100 MeV SEP Events and Intensity based on CMEs and other Solar Activities using Machine Learning",
     description:
-      "Use this space to capture the essentials and write a clear recap.",
+      "SEP event forecasting uses classifier/retraining strategies with autoencoders to handle extreme imbalance; cRT+AE and DL+rRT+AE lead performance.",
+    link: "https://cs.fit.edu/~pkc/theses/griessler23.pdf",
+    year: "2023",
+    source: "FIT",
+    noteDate: "2026-01-16",
+    reflection: [
+      "This thesis explores forecasting >100 MeV Solar Energetic Particle events and their peak intensity under severe class imbalance. It compares oversampling with classifier/retraining approaches that decouple feature learning from classifier optimization, including an autoencoder-augmented strategy.",
+      "For classification, cRT+AE delivers the strongest results with an F1 score of 0.800 while limiting false positives versus oversampling. The evaluation also tracks HSS and TSS to ensure event-skill reliability.",
+      "For peak intensity regression, the study adapts retraining techniques, integrates Richardson model hybrids, and evaluates DenseLoss. The combined DL+rRT+AE approach performs best, again reaching an F1 score of 0.800 alongside MAE and PCC metrics.",
+    ],
   },
   {
     id: "paper-two",
     title: "Another Reading Note",
     description:
       "Duplicate this template for each reading I want to capture.",
+    link: "[Add URL]",
+    year: "[Add year]",
+    source: "[Add source]",
+    noteDate: "[Add note date]",
+    reflection: [
+      "[Write a paragraph describing the main ideas and why this reading matters to me.]",
+      "[Add a second paragraph for key takeaways, examples, or how it connects to other things I have read.]",
+      "[Capture any insights, open questions, or follow-up ideas here.]",
+    ],
   },
 ];
 
@@ -50,27 +69,33 @@ export default function SummariesPage() {
                   <dl className="mt-4 space-y-4 text-sm text-zinc-700">
                     <div>
                       <dt className="font-semibold text-zinc-900">Title</dt>
-                      <dd className="mt-1 text-zinc-600">[Add title]</dd>
+                      <dd className="mt-1 text-zinc-600">
+                        {template.title}
+                      </dd>
                     </div>
                     <div>
                       <dt className="font-semibold text-zinc-900">Link</dt>
-                      <dd className="mt-1 text-emerald-600">[Add URL]</dd>
+                      <dd className="mt-1 text-emerald-600">
+                        {template.link}
+                      </dd>
                     </div>
                     <div>
                       <dt className="font-semibold text-zinc-900">Year</dt>
-                      <dd className="mt-1 text-zinc-600">[Add year]</dd>
+                      <dd className="mt-1 text-zinc-600">{template.year}</dd>
                     </div>
                     <div>
                       <dt className="font-semibold text-zinc-900">
                         Source
                       </dt>
-                      <dd className="mt-1 text-zinc-600">[Add source]</dd>
+                      <dd className="mt-1 text-zinc-600">{template.source}</dd>
                     </div>
                     <div>
                       <dt className="font-semibold text-zinc-900">
                         Note Date
                       </dt>
-                      <dd className="mt-1 text-zinc-600">[Add note date]</dd>
+                      <dd className="mt-1 text-zinc-600">
+                        {template.noteDate}
+                      </dd>
                     </div>
                   </dl>
                 </div>
@@ -79,18 +104,9 @@ export default function SummariesPage() {
                     Reflection
                   </p>
                   <div className="mt-4 space-y-4 text-sm text-zinc-600">
-                    <p>
-                      [Write a paragraph describing the main ideas and why this
-                      reading matters to me.]
-                    </p>
-                    <p>
-                      [Add a second paragraph for key takeaways, examples, or
-                      how it connects to other things I have read.]
-                    </p>
-                    <p>
-                      [Capture any insights, open questions, or follow-up ideas
-                      here.]
-                    </p>
+                    {template.reflection.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
                   </div>
                 </div>
               </div>
