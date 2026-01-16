@@ -20,7 +20,7 @@ const summaryTemplates = [
     title: "Another Reading Note",
     description:
       "Duplicate this template for each reading I want to capture.",
-    link: "[Add URL]",
+    link: "https://[Add URL]",
     year: "[Add year]",
     source: "[Add source]",
     noteDate: "[Add note date]",
@@ -76,7 +76,18 @@ export default function SummariesPage() {
                     <div>
                       <dt className="font-semibold text-zinc-900">Link</dt>
                       <dd className="mt-1 text-emerald-600">
-                        {template.link}
+                        {template.link.startsWith("http") ? (
+                          <a
+                            href={template.link}
+                            className="underline decoration-emerald-300 underline-offset-4 transition hover:text-emerald-700"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {template.link}
+                          </a>
+                        ) : (
+                          <span>{template.link}</span>
+                        )}
                       </dd>
                     </div>
                     <div>
