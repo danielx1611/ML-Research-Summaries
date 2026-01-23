@@ -16,6 +16,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "highly-imbalanced-regression-tabular-data",
+    title:
+      "Highly Imbalanced Regression with Tabular Data in SEP and Other Applications",
+    description:
+      "This paper addresses highly imbalance regression on tabular data, where the imbalance ratio >= 1000.",
+    link: "https://arxiv.org/pdf/2509.16339",
+    year: "2025",
+    source: "Proc. IEEE Intl. Conf. Machine Learning and Applications",
+    noteDate: "2026-01-23",
+    reflection: [
+      "This paper addresses highly imbalance regression on tabular data, where the imbalance ratio >= 1000. It is argued that Mean Squared Error is insufficient to evaluate the model’s predictions since it ignores the correlation between predictions and true values. The paper proposes CISIR (Correlation, Involution importance, and Stratified sampling for Imbalanced Regression), which has 3 components: the weighted Pearson Correlation Coefficient (wPCC), Monotonically Decreasing Involution (MDI) Importance, which generalizes inverse and linear weighting, while supporting convex, linear, or concave emphasis on rare samples, and (3) stratified sampling of mini-batches to ensure rare instances appear in every batch. The resulting model is based on a weighted MSE plus a scaled wPCC regularizer, with the importance derived from KDE-estimated label densities.",
+      "The method was evaluated on five highly imbalance tabular datasets (two SEP datasets, SARCOS, Blog Feedback, and Online News Popularity). The main metrics being use are AORE (average of overall MAE and rare-instance MAE) as well as AORC (average of overall PCC and rare-instance PCC), with additional metric checks such as MAE, MAER, PCC, and PCCR. Across the datasets, CISIR achieved the lowest AORE in the majority of datasets, and the highest/second-highest AORC in all datasets, outperforming other methods such DenseLoss, Balanced MSE, and other LDS,FDS-based baselines. Through the ablation studies, it was stated that wPCC contributed the largest gains, improving correlation as well as reducing error. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
