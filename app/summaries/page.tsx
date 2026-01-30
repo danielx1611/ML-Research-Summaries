@@ -31,6 +31,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "machine-learning-approach-time-series-relativistic",
+    title:
+      "A Machine Learning Approach to Predicting SEP Proton Intensity and Events Using Time Series of Relativistic Electron Measurements",
+    description:
+      "A neural time-series modeling approach using multivariate electron and proton data enables more accurate and stable 30–60 minute forecasting of solar energetic particle events compared to traditional matrix-based methods.",
+    link: "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024SW003921",
+    year: "2025",
+    source: "Space Weather",
+    noteDate: "2026-01-30",
+    reflection: [
+      "This paper presents a machine-learning approach for forecasting SEP events 30-60 minutes in advance using multivariate time-series data, which is composed of relativistic electron and proton data. The approach uses neural time-series models, both standard neural networks and recurrent neural networks (with GRU layers) to learn from the data and predict proton intensity and occurrence of SEP events. The model is fed a 2-hour input window that is sampled every 5 minutes, and then makes a prediction of the intensity at 30 minutes after the current time, as well as 60 minutes afterwards. The paper compares a single model (M1) setup and a multi-model setup (M3) that first tries to classify the “phase” of the window (background, rising, or falling) and then feeds the data to a specialized regressor that predicts the intensity depending on the phase. The models are evaluated on regression metrics (MAE, temporal lag), and event detection metrics via an alert-generation framework that can accommodate extended and advanced warning windows.",
+      "Compared to Posner’s matrix-based estimator that tries to bin electron intensity and rise rates into a fixed lookup table, the neural RNN models achieved lower errors when predicting intensity and had more stable forecasts. However, the RNNs tended to lag the rising edge of the events, which was attributed to inherent physical constraints, such as the timing offsets between electrons and protons, which limits how far ahead it can be predicted. Once “advance warnings”, which issues an alert immediately at prediction time, and “extended warnings” which results in smoother alert gaps, were incorporated the RNN models achieved higher F1 scores and had much fewer false positives. "
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
