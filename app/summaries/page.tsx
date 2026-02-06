@@ -46,6 +46,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "decoupling-representation-classifier-long-tailed-recognition",
+    title: "Decoupling Representation and Classifier for Long-Tailed Recognition",
+    description:
+      "A decoupled training approach separates representation learning from classifier learning to address class imbalance in long-tailed datasets.",
+    link: "https://openreview.net/pdf?id=r1gRTCVFvB",
+    year: "2020",
+    source: "ICLR",
+    noteDate: "2026-02-06",
+    reflection: [
+      "The paper proposes a decoupled approach for long-tailed (imbalanced) datasets, with the approach being tested on visual recognition and image classification. The method separates representation learning from classifier learning to better address class imbalance during training. High-quality feature representation does not require class-balanced training, and can even be done with just instance-balanced (natural) sampling. In some cases, it is even optimal. Once the representation is frozen, the performance can be substantially improved by rebalancing just the classifier, which was done with several methods such as classifier re-training (cRT), a nearest class mean (NCM) classifier, or a τ-normalization that rescales classifier weight norms to counteract bias towards the higher frequency classes.",
+      "An extensive evaluation was performed across three standard long-tailed benchmarks, ImageNet-LT, Places-LT, and iNaturalist 2018, analyzing accuracy for many-shot (>100), medium-shot (20-100), and few-shot (<20) classes. Decoupled methods significantly outperformed joint training, especially on medium and few-shot classes, even when using simple classifiers. Τ-normalization and classifier re-training yielded large gains (+5-11%) on medium/few-shot classes on ImageNet-LT, setting new state of the art performances across all datasets, outperforming more complex methods involving specialized loss/memory modules. Notably, freezing the representation and only adjusting the classifier was shown to perform better than fine-tuning the entire network, reinforcing the claim that long-tailed recognition benefits more from classifier boundary correction rather than imbalance-aware representation learning. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
