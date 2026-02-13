@@ -31,6 +31,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "density-based-weighting-imbalanced-regression",
+    title: "Density-based Weighting for Imbalanced Regression",
+    description:
+      "DenseWeight and DenseLoss provide a density-based cost-sensitive alternative to resampling for imbalanced regression.",
+    link: "https://link.springer.com/article/10.1007/s10994-021-06023-5",
+    year: "2021",
+    source: "MLJ",
+    noteDate: "2/13/2026",
+    reflection: [
+      "The paper proposes DenseWeight, a density-based sample weighting method for regression on imbalance datasets, and DenseLoss, a cost-sensitive neural networking training approach that is built on top of DenseWeight. Notably, regression lacks discrete categories, so it is harder to quantify the rarity of a sample compared to classification. To address this, a sample’s probability is estimated using kernel density estimation (KDE), and rarity is defined as being inversely proportional to this density. After normalizing density values, a weighting function controlled by a single hyperparameter, alpha, adjusts how strongly rare values are emphasized, while ensuring weights are positive and have a mean weight of 1. DenseLoss incorporates these weights in the loss function, making rare samples have more contribution to the gradient without needing to modify the dataset (unlike resampling methods such as SMOGN). This technique provides control over the trade-off between performance on common and rare target regions.",
+      "DenseLoss consistently improved performance on rare target ranges. In synthetic experiments, it significantly reduced RMSE and MAE in rare sample bins while slightly hindering performance on the most common sample bins. An alpha value of roughly 1.0 provides a strong tradeoff in order to increase rare sample accuracy. When compared to state-of-the-art resampling method SMOGN across 20 benchmark datasets, DenseLoss achieved more statistically significant wins in rare bins, typically outperforming SMOGN. In a real-world application involving precipitation downscaling, DenseLoss improved performance for both rare samples and common samples. In turn, it is concluded that cost-sensitive density-based weighting is an effective alternative to sampling-based approaches for imbalanced regression.",
+    ],
+  },
+  {
     id: "machine-learning-approach-time-series-relativistic",
     title:
       "A Machine Learning Approach to Predicting SEP Proton Intensity and Events Using Time Series of Relativistic Electron Measurements",
