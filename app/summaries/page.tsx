@@ -74,6 +74,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "delving-into-deep-imbalanced-regression",
+    title: "Delving into Deep Imbalanced Regression",
+    description:
+      "Introduces DIR and proposes LDS/FDS smoothing methods for handling continuous-target imbalance.",
+    link: "https://proceedings.mlr.press/v139/yang21m/yang21m.pdf",
+    year: "2021",
+    source: "ICML",
+    noteDate: "2/20/2026",
+    reflection: [
+      "The paper introduces the problem of Deep Imbalanced Regression (DIR), which addresses learning from data distributions that are heavily skewed, specifically for continuous ranges of values instead of categorical data. Unlike class imbalance, continuous targets lack hard boundaries and typically have meaningful relationships with other targets in its proximity, making traditional methods inadequate. The paper proposes two complementary approaches, Label Distribution Smoothing (LDS) and Feature Distribution Smoothing (FDS). LDS uses kernel density estimation to smooth the label distribution, generating an “effective” density that enables better loss re-weighting. FDS works in the feature space by smoothing the mean and covariance statistics of learned representations across neighboring bins. Afterwards, FDS follows up with a whitening and re-coloring calibration of the data. This process corrects biased feature estimates for regions with less data while also improving generalization for few-shot or zero-shot target values.",
+      "The methods were tested against five large-scale datasets, including vision (age estimation), NLP (semantic similarity), healthcare (health score prediction), and depth estimation, showing consistent improvements over strong baselines. The results showed that LDS and FDS boosted performance in medium- and low-shot ranges while maintaining or even slightly improving performance for many-shot ranges. In zero-shot areas, where interpolation and extrapolation are needed, the methods deliver substantial improvements over vanilla regression. Across various experiments, LDS and FDS outperformed other adapted imbalanced classification techniques, sometimes reducing errors by up to 50-60% in few-shot ranges, showing the need for regression-specific imbalance handling. The paper concludes that smoothing for both the label and feature space can help provide an effective framework for imbalance regression problems.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
