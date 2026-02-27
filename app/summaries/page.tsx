@@ -88,6 +88,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "ranksim-ranking-similarity-regularization-for-deep-imbalanced-regression",
+    title:
+      "RankSim: Ranking Similarity Regularization for Deep Imbalanced Regression",
+    description:
+      "RankSim aligns ranking structures in label and feature space to improve deep imbalanced regression performance.",
+    link: "https://proceedings.mlr.press/v162/gong22a/gong22a.pdf",
+    year: "2022",
+    source: "ICML",
+    noteDate: "2/27/2026",
+    reflection: [
+      "This paper proposes RankSim (Ranking Similarity Regularization), a regularization method for deep imbalanced regression that uses the natural ordering of continuous labels to reinforce training. Unlike classification, regression labels are continuous, and in turn, are inherently ordered. This is an additional feature that most algorithms do not exploit. RankSim encodes an inductive bias that samples close to each other in label space should be close in feature space, while also encouraging labels far away in label space to be far away in feature space. For each sample in a batch, the method computes pairwise similarities in label space and in feature space, ranks them according to similarity of their neighbors, and penalizes mismatches in the ranking order. Unlike prior smoothing-based techniques like Label Distribution Smoothing (LDS) and Feature Distribution Smoothing (FDS), which primarily smooth only nearby labels, RankSim encourages local and global relationships by enforcing that the full ranking of neighbors in feature space should be similar to the full ranking in label space. The regularizer is complementary to standard techniques like re-weighting, focal regression (Focal-R) and two-stage retraining.",
+      "Rank-Sim achieved new state-of-the-art performance on three deep imbalance regression benchmarks, across multiple metrics (MAE, GM, MSE, Pearson Correlation), and across many-shot, medium-shot, and few-shot regions, RankSim consistently improved over vanilla training and over other existing imbalance strategies. It also substantially outperformed smoothing-based methods in zero-shot target scenarios, suggesting that the global ranking constraint helps with interpolation and extrapolation during training. The method adds a moderate amount of overhead and is compatible with various hyperparameter choices. Enforcing alignment between label-space and feature-space rankings helps provide a strong mechanism for improving representation learning in deep imbalanced regression.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
