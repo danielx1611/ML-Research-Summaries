@@ -38,7 +38,7 @@ const summaryTemplates = [
     link: "https://link.springer.com/article/10.1007/s10994-021-06023-5",
     year: "2021",
     source: "MLJ",
-    noteDate: "2/13/2026",
+    noteDate: "2026-02-13",
     reflection: [
       "The paper proposes DenseWeight, a density-based sample weighting method for regression on imbalance datasets, and DenseLoss, a cost-sensitive neural networking training approach that is built on top of DenseWeight. Notably, regression lacks discrete categories, so it is harder to quantify the rarity of a sample compared to classification. To address this, a sample’s probability is estimated using kernel density estimation (KDE), and rarity is defined as being inversely proportional to this density. After normalizing density values, a weighting function controlled by a single hyperparameter, alpha, adjusts how strongly rare values are emphasized, while ensuring weights are positive and have a mean weight of 1. DenseLoss incorporates these weights in the loss function, making rare samples have more contribution to the gradient without needing to modify the dataset (unlike resampling methods such as SMOGN). This technique provides control over the trade-off between performance on common and rare target regions.",
       "DenseLoss consistently improved performance on rare target ranges. In synthetic experiments, it significantly reduced RMSE and MAE in rare sample bins while slightly hindering performance on the most common sample bins. An alpha value of roughly 1.0 provides a strong tradeoff in order to increase rare sample accuracy. When compared to state-of-the-art resampling method SMOGN across 20 benchmark datasets, DenseLoss achieved more statistically significant wins in rare bins, typically outperforming SMOGN. In a real-world application involving precipitation downscaling, DenseLoss improved performance for both rare samples and common samples. In turn, it is concluded that cost-sensitive density-based weighting is an effective alternative to sampling-based approaches for imbalanced regression.",
@@ -81,7 +81,7 @@ const summaryTemplates = [
     link: "https://proceedings.mlr.press/v139/yang21m/yang21m.pdf",
     year: "2021",
     source: "ICML",
-    noteDate: "2/20/2026",
+    noteDate: "2026-02-20",
     reflection: [
       "The paper introduces the problem of Deep Imbalanced Regression (DIR), which addresses learning from data distributions that are heavily skewed, specifically for continuous ranges of values instead of categorical data. Unlike class imbalance, continuous targets lack hard boundaries and typically have meaningful relationships with other targets in its proximity, making traditional methods inadequate. The paper proposes two complementary approaches, Label Distribution Smoothing (LDS) and Feature Distribution Smoothing (FDS). LDS uses kernel density estimation to smooth the label distribution, generating an “effective” density that enables better loss re-weighting. FDS works in the feature space by smoothing the mean and covariance statistics of learned representations across neighboring bins. Afterwards, FDS follows up with a whitening and re-coloring calibration of the data. This process corrects biased feature estimates for regions with less data while also improving generalization for few-shot or zero-shot target values.",
       "The methods were tested against five large-scale datasets, including vision (age estimation), NLP (semantic similarity), healthcare (health score prediction), and depth estimation, showing consistent improvements over strong baselines. The results showed that LDS and FDS boosted performance in medium- and low-shot ranges while maintaining or even slightly improving performance for many-shot ranges. In zero-shot areas, where interpolation and extrapolation are needed, the methods deliver substantial improvements over vanilla regression. Across various experiments, LDS and FDS outperformed other adapted imbalanced classification techniques, sometimes reducing errors by up to 50-60% in few-shot ranges, showing the need for regression-specific imbalance handling. The paper concludes that smoothing for both the label and feature space can help provide an effective framework for imbalance regression problems.",
@@ -96,7 +96,7 @@ const summaryTemplates = [
     link: "https://proceedings.mlr.press/v162/gong22a/gong22a.pdf",
     year: "2022",
     source: "ICML",
-    noteDate: "2/27/2026",
+    noteDate: "2026-02-27",
     reflection: [
       "This paper proposes RankSim (Ranking Similarity Regularization), a regularization method for deep imbalanced regression that uses the natural ordering of continuous labels to reinforce training. Unlike classification, regression labels are continuous, and in turn, are inherently ordered. This is an additional feature that most algorithms do not exploit. RankSim encodes an inductive bias that samples close to each other in label space should be close in feature space, while also encouraging labels far away in label space to be far away in feature space. For each sample in a batch, the method computes pairwise similarities in label space and in feature space, ranks them according to similarity of their neighbors, and penalizes mismatches in the ranking order. Unlike prior smoothing-based techniques like Label Distribution Smoothing (LDS) and Feature Distribution Smoothing (FDS), which primarily smooth only nearby labels, RankSim encourages local and global relationships by enforcing that the full ranking of neighbors in feature space should be similar to the full ranking in label space. The regularizer is complementary to standard techniques like re-weighting, focal regression (Focal-R) and two-stage retraining.",
       "Rank-Sim achieved new state-of-the-art performance on three deep imbalance regression benchmarks, across multiple metrics (MAE, GM, MSE, Pearson Correlation), and across many-shot, medium-shot, and few-shot regions, RankSim consistently improved over vanilla training and over other existing imbalance strategies. It also substantially outperformed smoothing-based methods in zero-shot target scenarios, suggesting that the global ranking constraint helps with interpolation and extrapolation during training. The method adds a moderate amount of overhead and is compatible with various hyperparameter choices. Enforcing alignment between label-space and feature-space rankings helps provide a strong mechanism for improving representation learning in deep imbalanced regression.",
@@ -110,7 +110,7 @@ const summaryTemplates = [
     link: "https://openreview.net/pdf?id=WHedsAeatp",
     year: "2023",
     source: "NeurIPS",
-    noteDate: "3/6/2026",
+    noteDate: "2026-03-06",
     reflection: [
       "The paper proposes a new representation learning framework for regression problems. Traditional model optimize prediction losses like L1 or MSE directly on outputs, which does not utilize the meaningful structure in learned feature representations. Embeddings can become fragmented and fail to capture continuous relationships between samples that exist in regression tasks. The paper introduces Rank-N-Contract (RNC) to address this problem. The method learns regression-aware embeddings by ranking samples according to their target values, then applying a contrastive objective based on the rankings. The core idea is the Rank-N-Contrast loss, which treats each sample as an anchor, then compares it with the others in the batch. This then enforces that samples with closer target values should have a higher similarity in the embedding space than samples with further target values. This aligns distances in feature space with distances in label space effectively, enforcing the ordered representation that can be found in continuous regression labels.",
       "Experiments were conducted across multiple datasets (age prediction, EEG brain-age estimation, gaze direction prediction, and temperature prediction), showing that RNC consistently improves regression performance compared with standard losses and other state-of-the-art methods. Adding RNC to baseline regression models reduces prediction error across datasets and improves mean absolute error and R-squared error, with average reductions of roughly 5-12% depending on the dataset. The method is also more robust to corrupted data, has better performance with limited training data, improved transfer learning, and stronger generalization to unseen (zero-shot) target ranges. Explicitly learning ordered, continuous representations aligned with regression targets leads to more efficient and generalizable regression models.",
@@ -124,7 +124,7 @@ const summaryTemplates = [
     link: "https://[Add URL]",
     year: "[Add year]",
     source: "[Add source]",
-    noteDate: "[Add note date]",
+    noteDate: "[Add YYYY-MM-DD note date]",
     reflection: [
       "[Write a paragraph describing the main ideas and why this reading matters to me.]",
       "[Add a second paragraph for key takeaways, examples, or how it connects to other things I have read.]",
@@ -132,6 +132,21 @@ const summaryTemplates = [
     ],
   },
 ];
+
+const sortedSummaryTemplates = [...summaryTemplates].sort((a, b) => {
+  const aTime = Date.parse(a.noteDate);
+  const bTime = Date.parse(b.noteDate);
+
+  if (Number.isNaN(aTime)) {
+    return 1;
+  }
+
+  if (Number.isNaN(bTime)) {
+    return -1;
+  }
+
+  return aTime - bTime;
+});
 
 export default function SummariesPage() {
   return (
@@ -151,7 +166,7 @@ export default function SummariesPage() {
           </p>
         </div>
         <div className="flex flex-col gap-8">
-          {summaryTemplates.map((template) => (
+          {sortedSummaryTemplates.map((template) => (
             <article
               key={template.id}
               className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm"
