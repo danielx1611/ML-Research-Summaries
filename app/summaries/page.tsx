@@ -117,6 +117,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "conr-contrastive-regularizer-for-deep-imbalanced-regression",
+    title: "ConR: Contrastive Regularizer for Deep Imbalanced Regression",
+    description:
+      "ConR regularizes feature representations to better preserve minority label structure in deep imbalanced regression.",
+    link: "https://openreview.net/pdf?id=RIuevDSK5V",
+    year: "2024",
+    source: "ICLR",
+    noteDate: "2026-03-13",
+    reflection: [
+      "The paper proposes a method for improving regression models for imbalanced datasets with continuous labels. In such scenarios, minority labels have few training examples, meaning their learned feature representations tend to merge/collapse with/towards those of majority labels, leading to inaccurate predictions for the minority samples. The paper proposes ConR, a contrastive regularizer that aligns relationships in the label space with those in the feature space. ConR selects anchors, positive pairs, and negative pairs based on label similarity and prediction similarity. Positive pairs (samples with similar labels) are pulled closer in feature space, while negative pairs (samples with different labels but similar predictions) are pushed apart. ConR introduces an additional part, “relative pushing weights”, which increase repulsions strength for minority samples and pairs whose labels differ by larger amounts, helping prevent minority features from collapsing into majority clusters. The final form of the method combines a standard regression loss with the ConR regularization term to enforce accurate predictions and well-structured feature representations.",
+      "Experimental results show that ConR improved performance across multiple benchmarks and tasks, including age estimation (AgeDB-DIR and IMDB-WIKI-DIR), depth estimation (NYUD2-DIR), and gaze estimation (MPIIGaze-DIR). Across the datasets, adding ConR to existing state-of-the-art methods such as LDS, FDS, RAnkSim, and Balanced MSE reduced prediction errors and improved metrics like MAE and RMSE, especially in few-shot (minority) regions. On the AgeDB-DIR benchmark, ConR achieved a best MAE of 6.81 overall and 9.21 for few-shot samples, outperforming baseline methods. It also improved depth estimation with an RMSE of 1.265 on the NYUD2-DIR dataset. The paper concludes that ConR effectively mitigates imbalance in regression tasks via the preservation of local and global label relationships, while remaining computationally efficient and compatible with existing methods.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
