@@ -131,6 +131,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "deep-imbalanced-regression-via-hierarchical-classification-adjustment",
+    title: "Deep Imbalanced Regression via Hierarchical Classification Adjustment",
+    description:
+      "This paper proposes Hierarchical Classification Adjustment (HCA), a method designed to improve regression tasks when the data is imbalanced.",
+    link: "https://openaccess.thecvf.com/content/CVPR2024/papers/Xiong_Deep_Imbalanced_Regression_via_Hierarchical_Classification_Adjustment_CVPR_2024_paper.pdf",
+    year: "2024",
+    source: "CVPR",
+    noteDate: "2026-03-20",
+    reflection: [
+      "This paper proposes Hierarchical Classification Adjustment (HCA), a method designed to improve regression tasks when the data is imbalanced. Instead of directly predicting the values, the method converts regression into a classification problem by dividing the target range into bins. The method’s main idea is to use multiple classifiers at differing levels of granularity. Coarse classifiers (with less bins) are better at being balanced and accurate, but are less precise with what is in the bin, while fine classifiers (with more bins) are more precise but less reliable due to the imbalance present in the smaller bin. HCA combines these two types by using the coarse classifiers to guide the predictions of the fine classifier, improving accuracy. To make it more efficient, an additional version of the method was proposed, HCA-d, which distills the information from all classifiers into a single model while preserving the consistency of the predictions.",
+      "The method was evaluated on tasks such as age estimation, crowd counting, and depth estimation. HCA consistently outperformed standard regression and classification approaches. It achieved lower error and improved performance across both common and rare samples. The improvements are very strong when the dataset is both imbalanced and has a more limited amount of data, while gains are smaller when the data is plentiful across all ranges. The paper concludes that combining coarse and fine classifiers in a hierarchical way leads to more accurate predictions and better regression models.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
