@@ -145,6 +145,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "deep-imbalanced-regression-via-hierarchical-classification-adjustment-jmlr-2008",
+    title: "Deep Imbalanced Regression via Hierarchical Classification Adjustment",
+    description:
+      "The paper introduces t-Distributed Stochastic Neighbor Embedding (t-SNE), a nonlinear dimensionality reduction algorithm.",
+    link: "https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf?fbcl",
+    year: "2008",
+    source: "JMLR",
+    noteDate: "2026-03-27",
+    reflection: [
+      "The paper introduces t-Distributed Stochastic Neighbor Embedding (t-SNE), a nonlinear dimensionality reduction algorithm. It is designed to visualize high-dimensional (>3D) data in 2D or 3D while preserving a meaningful structure in the data. The method builds on top of normal SNE, which converts pairwise distances into probabilities that represent similarity between samples, and then minimizes the mismatch between high- and low-dimensional distributions. t-SNE improves on SNE in two main ways: using a symmetrized probability distribution and simplifying optimization, and by replacing the Gaussian similarity in the low-dimensional space with a heavy-tailed Student-t distribution, which helps alleviate the “crowding problem” where points collapse towards the center. The changes help increase repulsion between dissimilar points while still keeping similar points close together, making the optimization more stable and better at capturing both local neighborhoods and global cluster structure.",
+      "t-SNE significantly outperforms competing dimensionality reduction techniques (PCA, Isomap, LLE, Sammon mapping) across multiple datasets. On the MNIST dataset, t-SNE produces clear, well-separated clusters of digits, whereas other methods show heavy overlap or poor structure. It also captures fine-grained intra-class variations and supports downstream tasks: a 1-NN classifier trained on the 2D t-SNE embedding achieved lower error (5.13%) than using the original high-dimensional data (5.75%). Across various datasets, t-SNE consistently revealed meaningful class structures that other methods failed to cleanly separate. t-SNE is a state-of-the-art visualization tool that effectively preserves local relationships while revealing global patterns, but it has some drawbacks such as having quadratic complexity, sensitivity to high intrinsic dimensionality, and a non-convex objective.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
