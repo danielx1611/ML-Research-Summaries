@@ -145,8 +145,8 @@ const summaryTemplates = [
     ],
   },
   {
-    id: "deep-imbalanced-regression-via-hierarchical-classification-adjustment-jmlr-2008",
-    title: "Deep Imbalanced Regression via Hierarchical Classification Adjustment",
+    id: "visualizing-data-using-t-sne",
+    title: "Visualizing Data using t-SNE",
     description:
       "The paper introduces t-Distributed Stochastic Neighbor Embedding (t-SNE), a nonlinear dimensionality reduction algorithm.",
     link: "https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf?fbcl",
