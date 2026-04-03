@@ -159,6 +159,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "why-should-i-trust-you-explaining-the-predictions-of-any-classifier-lime",
+    title:
+      '"Why Should I Trust You?": Explaining the Predictions of Any Classifier (LIME)',
+    description:
+      "LIME introduces local, interpretable, model-agnostic explanations and SP-LIME for selecting representative explanations.",
+    link: "https://dl.acm.org/doi/pdf/10.1145/2939672.2939778?",
+    year: "2016",
+    source: "SIDKDD",
+    noteDate: "2026-04-03",
+    reflection: [
+      "This paper proposes LIME (Local Interpretable Model-Agnostic Explanations), a method for explaining the predictions of any machine learning classifier by approximating it locally with a simpler, interpretable model. The main idea is that a complex model’s behavior around a single prediction can be approximated by a sparse linear model that is easy for humans to understand. LIME perturbs the input instance, querying the black-box model on the perturbed samples, then fits a weighted interpretable model that minimizes a trade-off between local fidelity (matching the original model’s output near the instance) and interpretability (keeping the explanations human-readable). Additionally, the paper proposes SP-LIME, which selects a diverse, representative set of instances using submodular optimization so that a user can gain a global understanding of a model’s behavior from a small set of explanations.",
+      "The method shows strong performance across multiple evaluation settings. In simulated experiments, LIME achieved over 90% recall in recovering truly important features, significantly outperforming other methods like Parzen and greedy methods, indicating higher faithfulness to the original model. It also yields the best results in helping users judge whether to trust predictions, with F1 scores around 95-97% across classifiers and datasets, far exceeding alternatives. In model selection tasks, LIME (more so with SP-LIME) enabled users to correctly identify better-generalizing models even when the accuracy metrics were misleading. Further studies involving human-subjects showed that explanations helped non-experts improve models through feature engineering and identifying suspicious correlations (e.g. classifier relying on a snowy background instead of an animal’s features). LIME provides accurate, interpretable, and model-agnostic explanations that significantly improve trust, model debugging, and decision-making for machine learning models.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
