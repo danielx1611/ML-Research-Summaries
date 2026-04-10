@@ -174,6 +174,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "a-unified-approach-to-interpreting-model-predictions-shap",
+    title: "A Unified Approach to Interpreting Model Predictions (SHAP)",
+    description:
+      "SHAP unifies additive feature attribution methods with Shapley values for consistent model explanations.",
+    link: "https://proceedings.neurips.cc/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf",
+    year: "2017",
+    source: "NeurIPS",
+    noteDate: "2026-04-10",
+    reflection: [
+      "This paper introduces SHAP (SHapley Additive exPlanations), a framework for interpreting predictions from complex machine learning models. The main idea is to treat explanation methods as “additive feature attribution models”, where a prediction is broken down into the contributions from each of the features. Many existing methods, like LIME, DeepLIFT, or Shapley sampling, all fit into the additive framework, and there is a unique solution satisfying all three desirable properties, namely local accuracy, missingness, and consistency. Using cooperative game theory as a reference, the identified solution was Shapley values, which measure a feature’s contribution to a prediction by averaging the marginal effect it has across all possible subsets of features. SHAP then provides algorithms like Kernel SHAP or Deep SHAP to approximate those values efficiently for various types of models.",
+      "In terms of results, the paper demonstrates that SHAP-based methods outperformed approaches in regards to computation and quality. Experiments showed that Kernel SHAP achieved higher sample efficiency and more accurate feature importance estimates than LIME and standard Shapley sampling, while also requiring fewer model evaluations. User studies also revealed that SHAP’s explanations aligned more closely with human intuition, especially in scenarios involving feature interactions (like max functions), where other methods can produce inconsistent or humanly unintuitive attributions. SHAP provides a theoretically grounded and empirically superior framework for model interpretation, unifying prior work and improving its consistency, accuracy, and interpretability of the explanations it produces.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
