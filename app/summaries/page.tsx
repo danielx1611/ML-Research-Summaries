@@ -188,6 +188,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "grad-cam-visual-explanations-from-deep-networks-via-gradient-based-localization",
+    title:
+      "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization",
+    description:
+      "Grad-CAM generates class-discriminative heatmaps by weighting final convolutional feature maps with target gradients.",
+    link: "https://openaccess.thecvf.com/content_ICCV_2017/papers/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.pdf",
+    year: "2017",
+    source: "ICCV",
+    noteDate: "2026-04-17",
+    reflection: [
+      "This paper introduces Grad-Cam (Gradient-weighted Class Activation Mapping), which is a method for generating visual explanations of decisions made by convolutional neural networks. The core idea is to use gradients of a target output like a class score that is flowing into the final convolutional layer of a model to compute importance weights for each feature map. It then combines these maps to produce a heatmap highlighting sections of the image that are the most relevant to the prediction. The approach can be applied across various CNN architectures (such as classification, captioning, and VQA (visual question answering) models) without requiring any architectural changes or retraining of the model. It can also be combined with high-resolution gradient-based techniques to form Guided Grad-CAM, which produces class-discriminative and fine-grained visualizations.",
+      "Grad-CAM performed strongly across multiple evaluations. On the ILSVRC-15 weakly supervised localization task, it outperformed prior visualization methods and even surpassed standard CAM while maintaining the original classification accuracy. Studies with human testers showed that the visualizations were more interpretable for humans and helped users distinguish between classes and assess model reliability. Grad-CAM also exhibited higher faithfulness to model behavior and proved useful for diagnosing model failures and identifying dataset bias.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
