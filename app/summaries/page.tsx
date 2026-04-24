@@ -203,6 +203,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "forecasting-100-mev-sep-events-chapter-3-4-2-4-3-1",
+    title:
+      "Forecasting >100 MeV SEP Events and Intensity based on CMEs and other Solar Activities using Machine Learning (Chapter 3 and 4.2.4.3.1)",
+    description:
+      "Two-stage cRT + AE training with preprocessing and balancing improves SEP-event classification under severe class imbalance.",
+    link: "https://cs.fit.edu/~pkc/theses/griessler23.pdf",
+    year: "2023",
+    source: "FIT",
+    noteDate: "2026-04-24",
+    reflection: [
+      "The data was preprocessed in order to be ready for machine learning. The raw features were mostly retained but adjusted based on outside knowledge, then scaled to [0,1] to ensure features didn’t artificially dominate training. For features with large value ranges, a log transformation was applied before undergoing normalization, which improves numerical stability during optimization and training. The preprocessing was essential for the algorithm’s effectiveness, as it had a direct impact on how the neural network interpreted and weighted the different features.",
+      "The core algorithm discussed was a two-stage neural network approach with classifier re-training and an autoencoder feature (cRT + AE). In the first stage, the model learned feature representations from the imbalance dataset. In the second, earlier layers were frozen and a new classifier (with an additional hidden layer appended) was retrained on a more balanced dataset to try and improve decision boundaries. Performance analyses showed that the method generally improved classification metrics like F1 score and TSS compared to simpler methods. These gains, however, depended on the level of oversampling of the rare class data and often introduced a trade-off between false positives and false negatives. Feature importance analysis indicated that the model captured meaningful relationships between key variables, but also showed that the model had sensitivity to local data distributions, which could lead to occasional misclassifications of samples. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
