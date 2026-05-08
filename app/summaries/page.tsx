@@ -218,6 +218,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "prediction-solar-energetic-particle-event-peak-proton-intensity-richardsons",
+    title:
+      "Prediction of Solar Energetic Particle Event Peak Proton Intensity Using a Simple Algorithm Based on CME Speed and Direction and Observations of Associated Solar Phenomena (Richardson’s)",
+    description:
+      "An empirical CME speed/direction SEP-intensity model with radio and CME-property filtering improves forecasting skill while managing false alarms.",
+    link: "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018SW002032",
+    year: "2018",
+    source: "Space Weather",
+    noteDate: "2026-05-08",
+    reflection: [
+      "The paper proposes an empirical forecasting method for predicting the peak intensity of solar energetic particle (SEP) events near 1 AU using only a few observable properties of coronal mass ejections (CMEs). The core of the algorithm is centered on a formula developed by Richardson et al. (2014) that models SEP intensity as an exponential function of CME speed and a Gaussian dependence on the longitudinal “connection angle” between the spacecraft and the solar eruption site. Faster CMEs and better magnetic connection to the observer produce stronger SEP events. The authors applied the model to over 300 CMEs from the DONKI database and later to an independent set of around 1100 CMEs from solar cycle 23 (1997-2006). They improved upon the prediction system by filtering events using indicators such as CME width, type II radio bursts, and type III radio bursts. These radio signatures helped distinguish the small subset of CMEs that actually generate SEP events.",
+      "The results showed that the model was able to capture the behavior of large SEP events fairly well despite ignoring many physical details including particle transport and acceleration. For more intense SEP events, more than 80% of the predicted intensities were within one order of magnitude of observations. The model produced many false alarms due to roughly 85% of CMEs not being associated with detectable SEP events. Applying the aforementioned filters reduced the false alarm rate from around 70-80% down to 20-30%, though this caused some real SEP events to be missed in exchange. Skill-score analysis demonstrated that no single filtering strategy optimized every metric, but radio-emission filtering and CME speed-width thresholds consistently improved the model’s performance for moderate events. "
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
