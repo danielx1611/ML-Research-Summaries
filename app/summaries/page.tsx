@@ -233,6 +233,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "two-fists-one-heart-multi-objective-optimization-based-strategy-fusion-for-long-tailed-learning",
+    title:
+      "Two Fists, One Heart: Multi-Objective Optimization Based Strategy Fusion for Long-tailed Learning",
+    description:
+      "MOOSF frames long-tailed recognition as multi-objective strategy fusion and improves head/medium/tail balance.",
+    link: "https://openreview.net/pdf?id=MEZydkOr3l",
+    year: "2024",
+    source: "ICML",
+    noteDate: "2026-05-11",
+    reflection: [
+      "The paper proposes a new perspective on long-tailed classification by framing it as a multi-objective optimization problem rather than a single-objective accuracy maximization task. Existing long-tailed learning methods inherently trade off performance between head classes and tail classes. To address this, the authors introduce MOOSF (Multi-Objective Optimization based Strategy Fusion), which combines multiple long-tailed learning strategies including Balanced Softmax, LDAM, and BCL within a shared multi-task learning environment. Instead of relying on a single method, MOOSF dynamically fuses different strategies while resolving any conflicts between them. The framework has three major components: Hierarchical Influence Calibrated Adjustment (HICA), which adaptively weights the strategies based on their per-class effectiveness; Gradient Harmonization via Orthogonal Projection (GHOP), which reduces conflicting gradient directions between strategies; and Evolving Optimal Strategy Selection (EOSS), which dynamically selects the best-performing strategy for the various classes during inference time.",
+      "The method achieves strong results across multiple long-tailed benchmarks including CIFAR-100-LT, ImageNet-LT, and iNaturalist 2018. The results show that even simple strategy fusion already outperforms many standalone long-tailed methods. MOOSF further improves performance consistently by better balancing the head, medium, and tail accuracies. On CIFAR-100-LT, MOOSF(CE+BS) improves overall accuracy from the low 40s to over 52% while also improving tail-class accuracy. Similar gains were made on ImageNet-LT and iNaturalist, where the fused strategies surpass strong baseline strategies such as BCL and RIDE. The paper notes that the fusion introduces extra computation and optimization complexity, but the gains in performance and better balance across class frequencies justify the additional cost.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
