@@ -248,6 +248,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "prediction-100-mev-sep-events-goes-satellite-data",
+    title: "On the Prediction of >100 MeV Solar Energetic Particle Events Using GOES Satellite Data",
+    description:
+      "A VAR-plus-decision-tree pipeline uses cross-correlations in GOES X-ray/proton time series to improve >100 MeV SEP event prediction.",
+    link: "https://ieeexplore.ieee.org/document/8258212",
+    year: "2017",
+    source: "IEEE",
+    noteDate: "2026-05-15",
+    reflection: [
+      "The paper presented a machine-learning approach for predicting high-energy solar energetic particle (SEP) events (>100MeV) using data from GOES satellites. The authors focused on identifying if a major solar flare would lead to an SEP event that can significantly affect spacecraft, astronauts, and satellite systems. Their main contribution is the use of multivariate time-series analysis to capture not only correlations between X-ray and proton measurements, but also cross-correlations among different proton channels. This was not explored by prior works. The method extracted several hours of GOES X-ray and proton flux data before a flare event and modeled their temporal dependencies using a Vector Autoregression (VAR) framework. The coefficients from the VAR model are then used as features for an interpretable decision tree classifier.",
+      "Using a balanced dataset of 47 SEP and non-SEP events between 1997 and 2013, the authors evaluated different observation windows (\"spans\") and lag values with stratified 10-fold cross-validation. Their best-performing model used a 30-hour observation span and lag value of 5, resulting in results of ~78% accuracy, 73% recall, 86% precision, and an AUC of 0.77. The decision trees revealed that correlations between lower-energy proton channels and X-ray channels were among the most important features for making predictions, while proton-proton correlations were also found to be strong indicators of SEP occurrence. The cross-correlations provided valuable predictive information and can improve SEP forecasting performance beyond previous methods such as UMASEP, which the model slightly outperformed."
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
