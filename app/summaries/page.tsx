@@ -262,6 +262,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "pareto-deep-long-tailed-recognition-conflict-averse-solution",
+    title: "Pareto Deep Long-Tailed Recognition: A Conflict-Averse Solution",
+    description:
+      "PLOT reframes long-tailed learning as conflict-aware multi-objective optimization to improve medium/tail performance while preserving head-class accuracy.",
+    link: "https://openreview.net/pdf?id=b66P1u0k15",
+    year: "2024",
+    source: "ICLR",
+    noteDate: "2026-05-18",
+    reflection: [
+      "The paper proposes a new framework called PLOT (Pareto deep LOng-Tailed recognition) for improving depp long-tailed recognition. Existing long tail learning methods are focused on static or dynamic re-balancing strategies such as re-weighting losses, adjusting logits, or resampling data. However, most of these ignore an important optimization issue, which is the fact that there are often conflicts between classes during training. Through empirical analysis, the paper showed that head classes dominate the optimization while tail classes experience conflicting gradients, which harms the shared representation learning space. To address this, the paper reformulated long-tailed classification as a multi-objective optimization (MOO) problem. Their key contribution is a temporal adaptation of MOO techniques from multi-task learning to deep long-tailed regression. Instead of modifying the architecture with separate task branches, they apply MOO only during the early feature-learning stage and then transition back to standard optimization. The final PLOT framework combined Conflict-Averse Gradient Descent (CAGrad), a loss that helped improve generalization, and Sharpness-Aware Minimization (SAM) to stabilize convergence.",
+      "The method consistently improved upon a wide range of existing baselines, such as LDAM-DRW, cRT + Mixup, MiSLAS, GCL, and M2m, across CIFAR10/100-LT, Places-LT, ImageNet-LT, and iNaturalist benchmarks. For example, on CIFAR10-LT with imbalance ratio of 200, cRT+Mixup improves from 73.06% to 78.99% accuracy when augmented with PLOT, while GCL improves from 79.25% to 80.08%. On larger datasets, PLOT achieves state-of-the-art performance, especially improving medium and tail-class accuracy without severely hurting head classes. The paper also showed through Hessian spectrum and loss-landscape analyses that PLOT finds flatter minima and more balanced optimization trajectories, which supports the claim that reducing optimization conflicts leads to better representations and generalization.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
