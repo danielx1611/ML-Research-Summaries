@@ -276,6 +276,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "forecasting-sep-events-flare-xray-peak-ratios",
+    title: "Forecasting Solar Energetic Particle (SEP) events with Flare X-ray peak ratios",
+    description:
+      "Uses GOES two-band soft X-ray peak-ratio features with flare peak flux to improve SEP/non-SEP separability and forecasting.",
+    link: "https://www.swsc-journal.org/articles/swsc/full_html/2018/01/swsc180013/swsc180013.html",
+    year: "2018",
+    source: "Journal of Space Weather and Space Climate",
+    noteDate: "2026-05-22",
+    reflection: [
+      "This paper investigated whether the ratio between two GOES satellite soft X-ray measurements can improve forecasting of Solar Energetic Particle (SEP) events, which are bursts of high-energy particles associated with coronal mass ejections. Instead of relying only on the standard 0.1-0.8 nm X-ray flare intensity commonly used in operational forecasting systems, the paper analyzed the ratio between the 0.05-0.4 nm and 0.1-0.8 nm flare bands as an additional predictive feature. The dataset is a large set of solar flares from 1998-2016, which was used to compare flares that produced SEP events against those that did not. The main finding was that SEP-producing flares tend to have lower X-ray peak ratios (i.e. “cooler” inferred flare temperatures) than non-SEP flares, especially for large SEP events originating from the Sun’s western hemisphere. Small SEP events were much harder to distinguish from non-SEP flares.",
+      "The paper leveraged a two dimensional feature space using (1) the flare peak flux and (2) the X-ray peak ratio, then evaluated class separability statistically using t-tests and empirically through visualization, non-SEP, small SEP, NOAA SEP, and very large SEP events were separated into  different classes for analysis. The added ratio feature improved discrimination beyond using flare intensity alone. Two standard machine learning classifiers were applied to the data: a multilayer perceptron neural network and a k-nearest neighbors classifier. THe neural network produced smoother and useful decision boundaries, while the k-NN yielded noisier classification regions. The paper also compared its approach against existing SEP forecasting systems like PROTONS, ESPERTA, FORSPEF, and logistic-regression-based methods, noting that most prior systems use only single-band X-ray fluxes, CME measurements, or radio burst data.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
