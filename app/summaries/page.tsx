@@ -290,6 +290,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "long-tailed-learning-as-multi-objective-optimization",
+    title: "Long-Tailed Learning as Multi-Objective Optimization",
+    description:
+      "Reframes long-tailed classification as class-level multi-objective optimization using gradient-balanced grouping to reduce head-tail conflict.",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/28103",
+    year: "2024",
+    source: "AAAI",
+    noteDate: "2026-05-26",
+    reflection: [
+      "The paper proposed a new way of addressing long-tailed classification by treating it as a multi-objective optimization problem rather than a standard single-loss classification problem. Existing long-tailed learning methods suffer from a “seesaw dilemma” where improving tail-class performance often lowers head-class performance and vice versa. This was attributed to gradient imbalance, which is where gradients from head classes dominate training updates, while tail-class gradients are either undercompensated or overcompensated via reweighting strategies. To solve this, the paper formulated each class loss as a separate optimization objective and sought a Pareto descent direction that improved all classes at the same time. Since directly solving a multi-objective problem with hundreds of classes is computationally impractical, the Gradient-Balancing Grouping (GBG) algorithm was introduced. GBG first computes gradient similarities between classes, groups together classes with similar gradient directions using graph partitioning, and then performs multi-objective optimization at the group level using a min-norm optimization that was derived from the Multi-Gradient Descent Algorithm (MDGA). The resulting algorithm produced a balanced update direction that reduced gradient conflicts and implicitly boosted the influence of tail classes.",
+      "The method achieved state-of-the-art results on several major long-tailed benchmarks such as CIFAR10/100-LT, ImageNet-LT, and iNaturalist 2018. On ImageNet-LT, GBG reaches 57.6% top-1 accuracy with ResNet-50 and 58.7% with ResNeXt-50, outperforming previous methods such as BCL and RIDE. On CIFAR100-LT with an imbalance ratio of 100, the method improved accuracy to 52.31%, and on iNaturalist 2018 it achieved 71.9%, again surpassing prior approaches. The paper showed that grouping classes by gradient similarity is more effective than random grouping or grouping classes by class frequency alone, and that using too many objectives harms optimization due to the increased Pareto complexity.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
