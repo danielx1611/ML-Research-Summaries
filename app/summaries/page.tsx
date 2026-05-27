@@ -304,6 +304,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "technique-prediction-spes-solar-radio-flux-statistical-analysis-ann-ga",
+    title:
+      "A technique for prediction of SPEs from solar radio flux by statistical analysis, ANN and GA",
+    description:
+      "A hybrid statistical-analysis + ANN + GA method forecasts SPE occurrence from multi-frequency solar radio flux features.",
+    link: "https://link.springer.com/article/10.1007/s10509-018-3263-8",
+    year: "2018",
+    source: "Astro-phys. Space Sci.",
+    noteDate: "2026-05-27",
+    reflection: [
+      "The paper proposed a hybrid forecasting method for predicting Solar Proton Events (SPEs) using measurement of solar radio flux (SRF) at frequencies of 2800, 1415, and 610 MHz. Statistical analysis was performed on historical SRF and SPE data from 1976-1994, examining how SPE occurrence correlated with two main features: namely the daily total SRF and the relative overall rate of increase in SRF over three consecutive days. These statistical relationships were combined using an Artificial Neural Network (ANN) and a Genetic Algorithm (GA). The ANN was used as a nonlinear function approximator that mapped SRF parameters to expected SPE occurrence using a multilayer feedforward network with different activation functions such as tan-sigmoid, log-sigmoid, and linear activation. The GA was then applied to optimize the prediction parameters, searching for the SRF thresholds and rate-of-change values that maximized prediction quality. The final optimized thresholds found were roughly 175 s.f.u. and 10% increase at 2800 MHz, 110 s.f.u. and 5% at 1415 MHz, and 70 s.f.u. and 10% at 610 MHz.",
+      "The results show that the combined statistical analysis + ANN + GA approach achieved performance comparable to established methods from the Beijing Astronomical Observatory, even while using relatively simple radio-flux derived features. For a prediction window of 7-10 days, the method obtained Probability of Detection (POD) values ranging from 59% to 93%, depending on frequency and evaluation setup, though the False Alarm Rates (FARs) were relatively high, often exceeding 50%. Independent testing on 2003 data showed better detection rates, with some cases reaching 100% POD, but again at the cost of large false alarm rates.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
