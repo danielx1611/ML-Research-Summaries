@@ -319,6 +319,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "ts-mof-two-stage-multi-objective-fine-tuning-long-tailed-recognition",
+    title:
+      "TS-MOF: Two-Stage Multi-Objective Fine-tuning for Long-Tailed Recognition",
+    description:
+      "TS-MOF uses frozen-backbone multi-objective classifier-head fine-tuning to improve long-tailed recognition.",
+    link: "https://openreview.net/pdf?id=S82Afyfbj3",
+    year: "2025",
+    source: "NeurIPS",
+    noteDate: "2026-06-01",
+    reflection: [
+      "The paper proposes a framework for long-tailed image recognition, with head and tail class distributions. Existing long-tailed methods often improve tail-class accuracy at the expense of head-class accuracy, creating a “seesaw” tradeoff. To address this, TS-MOF splits learning into two stages. First, a backbone network is trained normally to learn strong visual features. Then, in a second stage, the backbone is frozen and multiple classifier heads are trained simultaneously using different long-tail learning strategies (including Balanced Softmax, BCL, and LOS). These strategies are used as separate objectives in a multi-objective optimization (MOO) framework. Two components drive the process: R-PLA (Refined Performance Level Agreement), which dynamically assigns weights to each strategy based on its per-class performance, and RD-PCGrad, which resolves conflicts between gradients from different strategies. At inference time, predictions from the classifier heads are combined using a class-specific weighting scheme that favors whichever strategy performs the best for that class.",
+      "Experimentally, TS-MOF achieved state-of-the-art performance across several benchmark datasets while noticeably improving recognition of rare classes. On the CIFAR-100-LT dataset with imbalance ratio 100, TS-MOF achieved 56.8% overall accuracy, surpassing the previous best method. It also increased tail-class accuracy from 36.6% to 39.9% and head-class accuracy from 70.3% to 79.0%. On the ImageNet-LT dataset, overall accuracy improved to 56.3%, and on the iNaturalist dataset, overall accuracy improved to 72.3%. Different strategies were shown to naturally specialize in different regions of the class distribution, and TS-MOF successfully learns how to combine them.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
