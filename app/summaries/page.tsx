@@ -334,6 +334,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "using-machine-learning-methods-forecast-solar-flares-cmes-seps",
+    title:
+      "Using Machine Learning Methods to Forecast if Solar Flares Will Be Associated with CMEs and SEPs",
+    description:
+      "Machine learning methods use magnetic active-region features to distinguish flares, flare-associated CME/SEP events, and CME-only events.",
+    link: "https://iopscience.iop.org/article/10.3847/1538-4357/aac81e",
+    year: "2018",
+    source: "The Astrophysical Journal",
+    noteDate: "2026-06-05",
+    reflection: [
+      "This paper investigates if machine learning techniques can distinguish between three types of solar events based on the magnetic properties of solar active regions (ARs). These three types include: Flares only, flares accompanied by both coronal mass ejections (CMEs) and solar energetic particles (SEPs), and CMEs occurring without associated flares or SEPs. 18 magnetic-field features were extracted from the SDO/HMI SHARPs dataset, and were combined with information from the DONKI and GOES databases. Two machine learning techniques were explored: Support Vector Machines (SVMs) with a radial basis function kernel, as well as Multilayer Perceptrons (MLPs). The problem was formulated as a three-class classification task, and the models were trained using stratified k-fold cross-validation. Rather than detecting if an eruption will occur at all, the paper is focused on determining which type of eruption an active region is likely to produce.",
+      "Both methods performed very well, with SVMs slightly outperforming MLPs in general. The best forecasts were obtained very far in advance, roughly 96 hours before an event occurred. For predicting flares accompanied by CMEs and SEPs, the SVM achieved a TSS of 0.92 +- 0.09 and HSS of 0.92 +- 0.08, while the MLP reached TSS = HSS = 0.93 +- 0.04. For CME-only events, performance was higher, reaching TSS/HSS of 0.98-0.99 at a 108-hour forecast window. The SHARPs magnetic features possess a strong discriminative power that machine learning can distinguish between. The dataset was noted to be relatively small due to the quieter nature of Solar Cycle 24, and the dataset did not include non-eruptive active regions.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
