@@ -349,6 +349,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "long-tailed-recognition-routing-diverse-distribution-aware-experts",
+    title: "Long-Tailed Recognition By Routing Diverse Distribution-Aware Experts",
+    description:
+      "RIDE uses diverse distribution-aware experts and routing to improve rare-class recognition without sacrificing common-class performance.",
+    link: "https://openreview.net/pdf?id=D9I3drBz4UC",
+    year: "2021",
+    source: "ICLR",
+    noteDate: "2026-06-10",
+    reflection: [
+      "The paper introduced RIDE (RoutIng Diverse Distribution-Aware Experts), a long-tailed image classification method focused on improving recognition performance on rare classes without sacrificing performance on common classes. Existing methods were examined via a bias-variance decomposition, showing that most approaches reduce tail-class bias but as a result, substantially increase model variance and leave a large head-tail performance gap. To address this, RIDE uses a multi-expert architecture where several experts share early network layers but have separate layers later in training. Each expert has its own classification loss, while a novel distribution-aware diversity loss encourages the experts to make complementary decisions, more so for rare classes. At inference time, a learned routing module decides which experts should be considered for a given sample.",
+      "RIDE achieved state-of-the-art performance across major long-tail benchmarks. On CIFAR100-LT, RIDE improved accuracy from 43-44% to 49.1%, while simultaneously improving many-shot, medium-shot, and few-shot categories. On ImageNet-LT, it achieved up to 55.4% top-1 accuracy, outperforming prior methods such as LWS and cRT by over 7%. On iNaturalist 2018, RIDE reached 72.6% top-1 accuracy, exceeding the previous state-of-the-art by 6.3% while improving few-shot accuracy without degrading performance on the many-shot categories. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
