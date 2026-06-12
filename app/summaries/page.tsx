@@ -363,6 +363,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "solar-energetic-particle-event-occurrence-prediction-soft-xray-machine-learning",
+    title:
+      "Solar Energetic Particle Event occurrence prediction using Solar Flare Soft X-ray measurements and Machine Learning",
+    description:
+      "Uses GOES soft X-ray flare measurements and machine learning to predict SEP event occurrence.",
+    link: "https://www.swsc-journal.org/articles/swsc/full_html/2021/01/swsc210024/swsc210024.html",
+    year: "2021",
+    source: "Journal of Space Weather and Space Climate",
+    noteDate: "2026-06-12",
+    reflection: [
+      "The paper used a machine learning approach for predicting if a solar slate will be followed by a Solar Energetic Particle (SEP) event using only soft X-ray measurements from the GOES satellites. A large dataset across 25 years, containing roughly 18,000 solar flares without associated SEPs and 220 flares that did produce SEPs.For each flare, 24 features were extracted from the X-ray time series (including peak fluxes, fluences, and some derived quantities) and used as input for the network. To address the class imbalance between SEP and non-SEP events, a weighted cross-entropy loss function was used that penalized SEP misclassifications much more heavily than non-SEP errors. The final predictor was a combination of multiple neural networks whose probability outputs were averaged to produce the final SEP occurrence prediction.",
+      "The results demonstrated that the model had an average SEP detection rate of about 89.6% while correctly identifying non-sep events 92.3% of the time, leading to a mean True Skill Statistic (TSS) of 0.819. The model also achieved an ROC AUC of 0.938 when using the full flare dataset. The soft X-ray measurements contain substantial predictive information about SEP occurrence. The SEP events missed by the model tended to be weaker events, which has been a common theme throughout multiple papers.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
