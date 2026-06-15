@@ -378,6 +378,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "guide-gated-uncertainty-informed-disentangled-experts-long-tailed-recognition",
+    title:
+      "GUIDE: GATED UNCERTAINTY-INFORMED DISENTANGLED EXPERTS FOR LONG-TAILED RECOGNITION",
+    description:
+      "GUIDE uses gated uncertainty-informed disentangled experts to improve long-tailed recognition across major benchmarks.",
+    link: "https://openreview.net/pdf?id=jY21fwcrjr",
+    year: "2026",
+    source: "ICLR",
+    noteDate: "2026-06-15",
+    reflection: [
+      "The paper proposed GUIDE (Gated Uncertainty-Informed Disentangled Experts), a multi-expert framework for long-tailed recognition (LTR) that argues other expert-based methods are limited by three forms of entanglement: experts learn overly similar representations, adaptation policies cannot distinguish between model uncertainty and data ambiguity, and meta-learning and task learning interfere during optimization. GUIDE addresses this with a hierarchical three-level design. It enforces specialization among experts by decorrelating features and setting prediction-diversity objectives, encouraging the experts to learn different representations rather than converging on head-class features. It also introduced an uncertainty-guided adaptation mechanism that breaks down predictive uncertainty into epistemic uncertainty (model ignorance) and aleatoric uncertainty (data ambiguity). These estimates drive a Dynamic Expert Refinement Module (DERM), which allocates additional model capacity only when it is beneficial. GUIDE employs a two-timescale optimization strategy, where the primary classification network gets updated while the meta controlling expert refinement is updated slowly on validation data, which helps improve optimization stability.",
+      "Across major long-tailed benchmarks such as CIFAR-100LT, ImageNet-LT, iNaturalist 2018, Places-LT, and CIFAR-10-LT, GUIDE achieved state-of-the-art or near it performance. On CIFAR-100-LT with imbalance ratio 100, GUIDE improved overall accuracy to 56.4%, outperforming previous methods, while achieving large gains on the difficult few-shot classes (36%, up from previous best 31.2%). Similar improvements were observed on ImageNet-LT (62.5%), iNaturalist 2018 (76.1%), and Places-LT(42.2%). Ablation studies show that each of GUIDE’s three disentanglement levels contribute independently to performance and that combining all 3 yields the best results.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
