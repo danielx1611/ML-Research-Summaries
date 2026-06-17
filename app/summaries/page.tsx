@@ -393,6 +393,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "assessing-predictability-solar-energetic-particles-machine-learning-techniques",
+    title:
+      "Assessing the Predictability of Solar Energetic Particles with the Use of Machine Learning Techniques",
+    description:
+      "Machine-learning classifiers use flare, CME, and solar-cycle features to predict SEP occurrence under realistic class imbalance.",
+    link: "https://link.springer.com/article/10.1007/s11207-021-01837-x",
+    year: "2021",
+    source: "Solar Physics",
+    noteDate: "2026-06-17",
+    reflection: [
+      "This paper presented a machine-learning framework for predicting if a solar flare and/or CME will produce an SEP event. The authors formulated SEP forecasting as a highly imbalance binary classification problem, since SEP-producing CMEs are rare compared to the total number of CMEs. The datasets contain flare properties (longitude, soft X-ray peak intensity, fluence, duration, rise time), CME properties (speed and width), and solar cycle information, then evaluate a variety of techniques such as logistic regression, support vector machines, neural networks, decision trees, random forests, extremely randomized trees, and extreme gradient boosting. The paper used a rigorous nested 5x5 cross-validation framework for hyperparameter optimization, class weighting to address imbalance, and a feature-importance analysis.",
+      "Using both flare and CME information together produced substantially better predictions than using either source alone.. Among all methods tested, the Random Forest model performed best on the realistic imbalance dataset, achieving a Probability of Detection of 0.76 +- 0.06, False Alarm Rate of 0.34 +- 0.10, True Skill Statistic of 0.75 +- 0.05, and Heidke Skill Score of 0.69 +- 0.04. Logistic Regression produced the lowest false-alarm rates but missed more SEP events, while tree-based ensemble methods generally achieved the highest detection rates. Training on artificially balanced datasets tends to yield overly optimistic results that do not translate well to real-word SEP forecasting. Feature-importance analysis revealed that CME speed, CME width, and flare soft X-ray fluence are the most informative predictors of SEP occurrence.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
