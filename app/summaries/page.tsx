@@ -408,6 +408,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "improve-representation-imbalanced-regression-geometric-constraints",
+    title:
+      "Improve Representation for Imbalanced Regression through Geometric Constraints",
+    description:
+      "This paper introduces Surrogate-driven Representation Learning (SRL), a method for deep imbalance regression (DIR) that focuses on improving the geometry of the learned feature space instead of just modifying loss or sample weights.",
+    link: "https://openaccess.thecvf.com/content/CVPR2025/papers/Dong_Improve_Representation_for_Imbalanced_Regression_through_Geometric_Constraints_CVPR_2025_paper.pdf",
+    year: "2025",
+    source: "CVPR",
+    noteDate: "2026-06-22",
+    reflection: [
+      "This paper introduces Surrogate-driven Representation Learning (SRL), a method for deep imbalance regression (DIR) that focuses on improving the geometry of the learned feature space instead of just modifying loss or sample weights. Unlike classification where classes form separate clusters, regression features should form a continuous latent space that follows the progression of the target variable. The paper defines a new notion of uniformity for regression using two geometric constraints. The first, which is called Enveloping Loss, encourages the latent space to spread across and take up as much of the hypersphere feature space as possible, which helps prevent collapse in regions dominated by many-shot classes. The second, which is called Homogeneity Loss, encourages the latent space to be smooth and to have representations spaced evenly along it, to avoid irregular gaps and clustering. Since these losses require a global view of the label range, the paper introduced SRL, which maintains a surrogate set of label-bins collected across mini-batches and epochs, which allows the geometric constraints to be applied over the entire regression label space.",
+      "Experimental results showed that SRL improved performance across multiple imbalanced regression benchmarks, such as AgeDB-DIR, IMDB-WIKI-DIR, STS-B-DIR, several curated UCI-DIR tabular datasets, and a newly proposed Imbalanced Operator Learning (IOL) benchmark. On AgeDB-DIR, SRL reduced overall MAE from 7.67 to 7.22 while improving few-shot region MAE from 12.61 to 9.81. Similar gains were shown on IMDB-WIKI-DIR, STS-B-DIR, and UCI-DIR, with SRL achieving the best overall and few-shot results often. The method improved existing imbalance regression approaches including LDS/FDS, RankSim, BalancedMSE, and ConR when combined with them, showing that SRL is complementary to existing methods. Feature visualizations in the paper show SRL producing a much more uniform distribution, allowing underrepresented target regions to occupy much more feature-space volume.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
