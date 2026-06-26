@@ -423,6 +423,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "interpretable-machine-learning-forecast-sep-events-solar-cycle-23",
+    title: "Interpretable Machine Learning to Forecast SEP Events for Solar Cycle 23",
+    description:
+      "Uses interpretable machine learning with SMARP active-region magnetic features to forecast SEP-producing flares for Solar Cycle 23.",
+    link: "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021SW002842",
+    year: "2022",
+    source: "Space Weather",
+    noteDate: "2026-06-26",
+    reflection: [
+      "This paper investigates if Space-Weather MDI Active Region Patches (SMARPs), a new dataset derived from SHOHO/MDI magnetograms, can be used to predict if a solar flare will produce an SEP event. Rather than using the flare itself as the primary predictor, focus is put onto the magnetic properties of the active region measured before the flare peak, providing an average forecasting lead time of roughly 55 minutes. Five SMARP-derived features (such as total unsigned magnetic flux, active region area, magnetic field gradient, R-value, and angular distance from Earth’s magnetic footprint) were evaluated using several interpretable machine learning methods, including Support Vector Machines, logistic regression, and ridge regression. Since only 65 positive SEp events were available compared to over 6,500 negative samples, balanced training/testing splits were used for 100 Monte Carlo bootstrap runs to estimate performance.",
+      "The results showed that the best SMARP-only model, a third-degree polynomial SVM using total unsigned flux and active-region distance, correctly predicted SEP-producing flares with an accuracy of 0.72 +- 0.12, achieving a TSS of 0.47 +- 0.24 and HSS of 0.44 +- 0.25. When conventional flare information such as peak X-ray intensity was included, performance improved substantially, reaching roughly 91-92% accuracy and TSS/HSS values around 0.84, demonstrating that flare intensity is the single strongest SEP predictor. The SMARP features are available before the flare reaches peak intensity, which can help give additional forecasting lead time. SMARP measurements are best to be viewed as an early-warning complement to flare-based predictors, helping to provide interpretable magnetic-field information that can improve prediction of SEP events while extending the available warning time.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
