@@ -437,6 +437,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "balanced-sharpness-aware-minimization-imbalanced-regression",
+    title: "Balanced Sharpness-Aware Minimization for Imbalanced Regression",
+    description:
+      "BSAM reweights the SAM perturbation step by inverse target-bin frequency to improve rare-region generalization in imbalanced regression.",
+    link: "https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Balanced_Sharpness-Aware_Minimization_for_Imbalanced_Regression_ICCV_2025_paper.pdf",
+    year: "2025",
+    source: "ICCV",
+    noteDate: "2026-06-29",
+    reflection: [
+      "The paper proposes Balanced Sharpness-Aware Minimization (BSAM), an algorithm designed specifically for imbalance regression. The key problem is not data imbalance, but imbalanced generalization. Models generalize well to common target values but poorly to rare ones due to the loss landscape around those regions being sharper. Building on top of the Sharpness-Aware Minimization (SAM) algorithm, BSAM introduces a targeted reweighting strategy during the perturbation step of SAM. Instead of changing the regression loss, BSAM computes the adversarial parameter perturbation using importance weights derived by the inverse frequency of target-value bins. This results in rare regions to have greater influence when estimating the sharpest direction in parameter space. This encourages the model to learn flat loss landscapes across both common and rare target values, improving generalization without adding computational complexity or requiring a specialized loss function.",
+      "The method was evaluated across three imbalance computer vision regression benchmarks, AgeDB-DIR, IMDB-WIKI-DIR, and NYUD2-DIR. Across all datasets, BSAM consistently achieved state-of-the-art performance, outperforming approaches such as LDS, FDS, RankSim, Rank-N-Contrast, Balanced MSE, and standard SAM. On AgeDB-DIR, BSAM reduced the overall MAE from 6.391 to 6.067 compared to the strong SQINV baseline while improving few shot performance from 8.380 to 7.928. Similar improvements were shown on IMDB-WIKI-DIR (overall MAE 7.040 to 6.811) and NYUD2-DIR (RMSE 1.341 to 1.272), with strong gains on rare target values. Additional experiments showed BSAM improved performance regardless of the underlying regression loss, outperforms previous SAM variants designed for class imbalance, and produces significantly flatter loss landscapes in low-density regions.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
