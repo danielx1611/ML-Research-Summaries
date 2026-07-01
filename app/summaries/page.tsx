@@ -451,6 +451,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "up-to-1-hour-forecasting-radiation-hazards-solar-energetic-ion-events-relativistic-electrons",
+    title:
+      "Up to 1-hour forecasting of radiation hazards from solar energetic ion events with relativistic electrons",
+    description:
+      "An empirical SEP forecasting algorithm uses relativistic electron intensity and rise-rate features to estimate hazardous proton flux roughly one hour ahead.",
+    link: "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006SW000268",
+    year: "2007",
+    source: "Space Weather",
+    noteDate: "2026-07-01",
+    reflection: [
+      "The paper proposes an empirical short-term forecasting algorithm for SEP events that uses relativistic electrons as an early warning mechanism. Section 5 introduces the forecasting algorithm. Relativistic electrons consistently arrive at Earth roughly 63 minutes before hazardous 30-50MeV protons on average and that the electron intensity increase rate is strongly correlated with the later proton intensity increase. Rather than relying solely on electron rise rate, the forecasting algorithm combines two electron-derived features: the maximum electron rise parameter measuring within a sliding 5-60 minute window and the current relativistic electron intensity. Historical observations from 1996-2002 are used to populate a 13 x 18 forecasting matrix, where each cell contains the average proton intensity measured one hour later for a given combination of electron intensity and rise rate. During operation, the current electron measurements get mapped into this matrix to estimate the proton flux expected roughly one hour in the future, acting as a lookup table.",
+      "The method was shown to successfully reproduce the timing and approximate magnitude of major proton events, even during the extreme Halloween solar storms. The predicted proton intensities closely follow the observed intensities during event onsets, although the forecasts tends slightly overestimate the decay phase due to the matrix being designed to predict event onset instead of recovery. When converted into an operational warning system, the method issued advance warnings for all 4 hazardous SEP events that occurred during the test period, providing advance warning times ranging from 7 to 74 minutes. The algorithm produced only a handful of false warnings, which were mostly due to declining fluxes from previous events or interplanetary shock events.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
