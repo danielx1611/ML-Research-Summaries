@@ -466,6 +466,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "balanced-mse-imbalanced-visual-regression",
+    title: "Balanced MSE for Imbalanced Visual Regression",
+    description:
+      "Balanced MSE corrects standard MSE for imbalanced visual regression by accounting for the training label distribution.",
+    link: "https://openaccess.thecvf.com/content/CVPR2022/papers/Ren_Balanced_MSE_for_Imbalanced_Visual_Regression_CVPR_2022_paper.pdf",
+    year: "2022",
+    source: "CVPR",
+    noteDate: "2026-07-06",
+    reflection: [
+      "This paper proposes Balanced Mean Squared Error (Balanced MSE), a new loss function for imbalanced regression that addresses a fundamental issue within standard MSE loss. Traditional MSE learns the training label distribution, which is often heavily skewed towards common values, causing the model to underperform on rare targets. Instead of increasing the weight of rare samples, the algorithm derives a statistically principled correction from Bayes’ theorem that adjusts the predicted conditional distribution to account for the imbalance in the training labels. The resulting Balanced MSE has a standard MSE term and an additional balancing term that incorporates the training label distribution. The paper proposes several implementations of the idea, including a Gaussian Mixture Model (GAI) version with closed-form integration, a Batch-based Monte Carlo (BMC) implementation that requires no prior knowledge of the label distribution and estimates it from the mini-batch, and a Bin-based Numerical Integration (BNI) version that leverages kernel destiny estimation for one-dimensional regression tasks. Another advantage is that the required noise parameter can be learned automatically during training, avoiding extensive hyperparameter searches. ",
+      "The proposed method outperformed previous state-of-the-art approaches across both synthetic and real-world benchmarks. On synthetic regression problems, Balanced MSE remained accurate even as label imbalance became more severe, while traditional importance reweighting degraded substantially. On the IMDB-WIKI age estimation benchmark, Balanced MSE achieved the best balanced MAE, improving from 13.09 to 12.66-12.69, with large improvements on underrepresented age groups. On the NYUD2 depth estimation dataset, it reduced RMSE from 1.387 to 1.251. Balanced MSE is the first general approach applicable to high-dimensional imbalance regression through a new Human Mesh Recovery benchmark, where it significantly improved balanced pose reconstruction accuracy over existing methods.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
