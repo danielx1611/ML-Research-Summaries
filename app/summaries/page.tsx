@@ -480,6 +480,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "forecasting-solar-energetic-particle-events-solar-cycles-23-24-interpretable-machine-learning",
+    title:
+      "Forecasting Solar Energetic Particle Events During Solar Cycles 23 and 24 Using Interpretable Machine Learning",
+    description:
+      "Interpretable machine learning on merged SMARP/SHARP active-region data modestly improves SEP event forecasting across Solar Cycles 23 and 24.",
+    link: "https://iopscience.iop.org/article/10.3847/1538-4357/ad6f0e/",
+    year: "2024",
+    source: "Astrophysical J",
+    noteDate: "2026-07-10",
+    reflection: [
+      "The paper investigates whether a newly merged SMARP/SHARP dataset, which spans Solar Cycles 23 and 24, can improve the prediction of SEP events using machine learning techniques. Active region magnetic field measurements were matched with solar flares and then labeled according to whether the flare produced an SEP event. Multiple forecasting datasets were produced by selecting magnetic field measurements taken 2, 5, or 10 hours before the flare’s onset, using six physical predictors detailing magnetic flux, magnetic field gradients, and magnetic connectivity to Earth. A “clean” dataset was created by removing non-SEP-producing flares that occurred within SEP-producing active regions, reducing ambiguous training examples. Statistical analysis showed the total unsigned magnetic flux (USFLUXL and USFLUXZ), R_VALUE (unsigned flux near polarity inversion lines), and the angular distance to Earth’s magnetic foot point (ANG_DIST) were the most informative predictors, while the magnetic field gradient showed little discriminative power.",
+      "To evaluate the predictors, several machine learning models were used, including linear, polynomial, radial basis function (RBF), and sigmoid support vector machines (SVMs) along with logistic and ridge regression models. Hyperparameters were optimized using GridSearchCV, and each configuration was evaluated over 100 independent training/testing runs under balanced and naturally imbalance class distributions. The strongest-performing predictor pair was R_VALUE and ANG_DIST, with the best model (balanced logistic regression trained on the clean dataset) achieving roughly 70% accuracy, while the best operational model reached only 56% accuracy, only modestly exceeding random guessing. Increasing the dataset to cover two solar cycles produced a slight improvement in operational accuracy, although metrics such as F1 score, false-alarm rate, and skill scores improved more noticeably. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
