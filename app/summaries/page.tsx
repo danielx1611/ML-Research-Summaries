@@ -495,6 +495,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "improving-deep-regression-with-ordinal-entropy",
+    title: "IMPROVING DEEP REGRESSION WITH ORDINAL ENTROPY",
+    description:
+      "Ordinal Entropy regularizes regression representations with diversity and tightness terms to preserve target order while increasing feature-space entropy.",
+    link: "https://openreview.net/pdf/3fa28db76e89d4a3ce4e48a57a415e706ad74b51.pdf",
+    year: "2023",
+    source: "ICLR",
+    noteDate: "2026-07-13",
+    reflection: [
+      "This paper notes a common observation in computer vision: deep learning models achieve better performance by reformulation regression problems as classification tasks, even though regression targets are continuous. The advantage stems from differences in the learned feature representations as opposed to task-specific factors. Standard mean squared error (MSE) loss used for regression encourages features corresponding to similar targets to cluster together but does not encourage the overall feature space to spread out, resulting in low-entropy latent representations. In contrast, classification with cross-entropy minimizes intra-class variation while maximizing the diversity of class representations, producing higher entropy feature spaces that contain more informative representations. To bridge the gap without sacrificing ordinal relationship inherent to regression targets, Ordinal Entropy was introduced. It is a regularization method that augments the regression loss with two additional terms: a diversity term, which pushes feature centers apart relative to the differences between their target values, and a tightness term, which keeps features associated with similar targets closer together. This lets the model retain the ordering of continuous labels while learning a richer, more discriminative latent space.",
+      "The method was evaluated on a synthetic operator-learning task and several real-world regression problems, such as depth estimation, crowd counting, and age estimation. Across all experiments, the ordinal entropy regularizer consistently improved performance over standard regression models and also improved state-of-the-art regression architectures. On the NYU Depth V2 benchmark, adding the regularizer improved the ResNet-50 baseline across every evaluation metric and further improved the performance of the state-of-the-art NeW-CRFs model. Similar improvements were seen in the crowd counting dataset, where mean absolute and squared errors decreased, and for age estimation, where overall MAE and geometric mean error were reduced. Ablation studies showed that both preserving ordinal relationships and explicitly increasing feature-space entropy are important for achieving these gains.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
