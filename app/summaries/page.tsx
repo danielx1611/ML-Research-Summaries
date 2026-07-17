@@ -509,6 +509,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "improving-deep-regression-with-ordinal-entropy-sep-spectra",
+    title: "IMPROVING DEEP REGRESSION WITH ORDINAL ENTROPY",
+    description:
+      "A decision-tree regression approach predicts full SEP peak proton flux and fluence spectra across multiple energy channels.",
+    link: "https://iopscience.iop.org/article/10.3847/2041-8213/ad8bbc",
+    year: "2024",
+    source: "Astrophysical Journal Letters",
+    noteDate: "2026-07-17",
+    reflection: [
+      "This paper presents a machine learning regression approach for predicting the full energy spectra of SEP events, rather than predicting whether an SEP event will occur. A decision tree regression model combined with cost-complexity pruning (CCP) to estimate both peak proton flux spectrum and the event-integrated fluence spectrum across 11 proton energy channels (5-289 MeV). The model takes seven physical inputs describing the associated solar eruption: solar wind speed, flare longitude/latitude, flare peak and integrated soft X-ray flux, and CME speed and width. The model predicts the proton flux in one energy channel first, then feeds the prediction into the regression models for neighboring energy channels, exploiting the strong correlations between adjacent energy ranges. The iterative prediction strategy significantly improved performance compared to directly predicting all energy channels simultaneously while maintaining the interpretability and efficiency of the decision trees.",
+      "The proposed method achieved R-squared values greater than 0.95 for nearly every energy channel on both the training and test sets, with low mean squared error across both peak flux and fluence predictions. The model also successfully reproduced the complete energy spectra for historical SEP events and generalized well to an unseen extreme event, the 2024 May 13 Ground Level Enhancement, showing it can accuracy predict spectra outside of the original training dataset. The model outperformed previous SEP spectrum prediction methods. The model was trained with only 114 labeled SEP events, so testing on larger datasets with more features and events could further improve model performance.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
