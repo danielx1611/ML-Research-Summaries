@@ -523,6 +523,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "leveraging-group-classification-descending-soft-labeling-deep-imbalanced-regression",
+    title:
+      "Leveraging Group Classification with Descending Soft Labeling for Deep Imbalanced Regression",
+    description:
+      "A group-classification plus multi-expert regression framework uses descending soft labels to improve deep imbalanced regression.",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/34200",
+    year: "2025",
+    source: "AAAI",
+    noteDate: "2026-07-20",
+    reflection: [
+      "The paper proposes an approach for deep imbalance regression that treats regression as a combination of group classification and within-group regression, instead of attempting to predict continuous values directly. From a Bayesian perspective, the regression objective can be decomposed into two subproblems, motivating a divide-and-conquer approach. First, nearby continuous labels are grouped together, and an ordinal group-aware contrastive learning objective is used to learn feature representations that preserve the natural ordering of the target values while being resilient to class imbalance. A classifier predicts which label group a sample belongs to, and a multi-expert regressor then specializes in predicting values within each predicted group. To improve the group classification stage, a symmetric descending soft labeling strategy was introduced. The soft labels assign gradually decreasing probabilities to neighboring groups, reflecting that adjacent continuous values are inherently similar. This allows the classifier to exploit the relationships between nearby target values instead of treating every group as completely independent, ultimately providing more accurate group assignments and better regression performance.",
+      "The framework was evaluated on three benchmark DIR datasets: AgeDB-DIR, IMDB-WIKI-DIR, and STS-B-DIR, achieving state-of-the-art performance or slightly below it. On AgeDB-DIR, it achieved the best overall MAE of 6.87, outperforming methods such as VIR and RankSim, while also producing the lowest geometric mean, indicating more consistent performance across both common and rare samples. On IMDB-WIKI-DIR, the method achieved one of the best overall MAEs and showed strong improvements on medium-frequency and minority samples, demonstrating its ability to handle long-tailed distributions. On STS-B-DIR, it achieved the lowest overall MSE and the highest Pearson correlation for minority samples, highlighting that the method preserves relationships between continuous labels while improving prediction accuracy.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
