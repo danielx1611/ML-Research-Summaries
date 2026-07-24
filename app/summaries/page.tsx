@@ -538,6 +538,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "improving-solar-energetic-particle-event-prediction-multivariate-time-series-data-augmentation",
+    title:
+      "Improving Solar Energetic Particle Event Prediction through Multivariate Time Series Data Augmentation",
+    description:
+      "A data-augmentation framework improves multivariate time-series SEP event prediction under severe class imbalance.",
+    link: "https://iopscience.iop.org/article/10.3847/1538-4365/ad1de0",
+    year: "2024",
+    source: "Astrophysical Journal, Supplement Series",
+    noteDate: "2026-07-24",
+    reflection: [
+      "The paper proposes a machine learning framework for predicting SEP events at approximately 30, 60, and 100MeV while addressing severe data imbalance. Historical GOES proton flux time series data prior to solar flares was used as well as generated synthetic SEP samples, using three data augmentation techniques: Gaussian noise, SMOTE, and ADASYN. The augmented time series data is then used to train three time-series classifiers: Time Series Forest (TSF), ROCKET, and Shapelet Transform (ST). In addition to comparing augmentation methods, the paper investigates univariate versus multivariate time series, different observation window lengths, and a hierarchical classifier that first predicts 100 MeV events, ten 60 MeV events if necessary, then 30 MeV events. The hierarchical approach is designed to provide operational forecasts while prioritizing hazardous events.",
+      "The results show that the data augmentation substantially improved performance, with TSF consistently outperforming the other classifiers across all experiments. For 100 MeV samples,. Augmentation improved accuracy by roughly 20%, while 30 MeV prediction reached roughly 98% accuracy after augmentation. The authors also show that multivariate proton flux inputs (combining multiple GOES channels) outperform using a single proton channel alone, indicating that information from multiple energy bands improves predictive capabilities.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
