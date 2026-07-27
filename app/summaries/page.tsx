@@ -553,6 +553,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "dist-loss-enhancing-regression-few-shot-region-distribution-distance-constraint",
+    title:
+      "DIST LOSS: ENHANCING REGRESSION IN FEW-SHOT REGION THROUGH DISTRIBUTION DISTANCE CONSTRAINT",
+    description:
+      "Dist Loss aligns prediction and label distributions to improve regression performance in few-shot target regions.",
+    link: "https://openreview.net/pdf?id=YeSxbRrDRl",
+    year: "2025",
+    source: "ICLR",
+    noteDate: "2026-07-27",
+    reflection: [
+      "models tend to perform better on common target values but poorly on rare (few-shot) regions. Instead of just minimizing prediction error for each sample, Dist Loss also encourages the overall distribution of the model’s predictions to match the true label distribution. The method estimates the label distribution using KDE, generates pseudo-labels that reflect expected label distribution, sorts the model predictions into pseudo-predictions, and then minimizes the distance between the two distributions while also optimizing the standard regression loss. A differentiable sorting algorithm enables the distribution-matching objective to be optimized via backpropagation. The idea is that standard regression models concentrate predictions in the common area of the target space, while Dist Loss encourages predictions to be distributed more like the true data, improving performance on rare target values while not sacrificing overall accuracy.",
+      "Dist Loss was evaluated on three imbalance regression datasets spanning age estimation (IMDB-WIKI-DIR and AgeDB-DIR) and ECG-based potassium concentration prediction (ECG-K-DIR). Across these benchmarks, Dist Loss achieves state-of-the-art performance in the few-shot regions, outperforming existing methods in 28 of 30 reported metrics. The method also integrates well with the approaches, improving their results when used together, all while adding little computational overhead. The technique only fine-tunes the model’s final linear layers, allowing it to be lighter. Ablation studies showed that Dist Loss is robust to changes in batch size and consistently improves performance in few-shot and medium-shot regions. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
