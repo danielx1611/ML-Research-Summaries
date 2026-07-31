@@ -568,6 +568,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "machine-learning-approach-predicting-sep-events-properties-coronal-mass-ejections",
+    title:
+      "A Machine Learning Approach to Predicting SEP Events Using Properties of Coronal Mass Ejections",
+    description:
+      "A physics-informed MLP uses observed and derived CME features to forecast SEP events under severe class imbalance.",
+    link: "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021SW002797",
+    year: "2022",
+    source: "Space Weather",
+    noteDate: "2026-07-31",
+    reflection: [
+      "This paper presents a binary classification approach for forecasting whether an SEP event (defined as >10 MeV proton flux exceeding 10 pfu) will occur following a CME. Rather than relying solely on traditional physics-based forecasting, the authors train a multilayer perceptron (MLP) neural network using observed CME properties (such as speed, width, acceleration, and position angle) together with several physics-inspired derived features, including a diffusive shock acceleration (DSA) intensity estimate, Richardson's CME connection-angle formula, Type II radio burst characteristics, sunspot number, and CME history features. To address the severe class imbalance (only 108 SEP-producing CMEs out of 28,872 events), the authors use oversampling of the minority SEP class, finding a 1:3 positive-to-negative training ratio to perform better than undersampling. In addition to developing the classifier, they introduce a method for estimating feature importance by propagating normalized network weights through the trained neural network, allowing them to determine which physical variables contribute most to the prediction.",
+      "The proposed method demonstrates that combining observed CME measurements with derived physics-based features significantly improves SEP forecasting performance over using basic CME properties alone. Using all features, the model achieves an average TSS of 0.906, F1 score of 0.246, POD of 0.920, and FAR of 0.882, outperforming the baseline feature set, particularly in terms of F1 score and Heidke Skill Score. Feature importance analysis reveals that sunspot number and Type II radio burst area are the two most influential individual predictors, while speed-related features collectively contribute the most when grouped together, reinforcing the physical importance of CME speed for SEP generation. Although the model successfully detects most SEP events, it still produces too many false alarms for operational deployment. The authors conclude that incorporating physics-informed features into machine learning substantially improves prediction accuracy, but future work should focus on reducing false positives through improved CME measurements, richer Type II radio burst representations, and additional discriminative features.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
