@@ -583,6 +583,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "rethinking-classifier-re-training-longtailed-recognition-label-over-smooth-can-balance",
+    title:
+      "RETHINKING CLASSIFIER RE-TRAINING IN LONGTAILED RECOGNITION: LABEL OVER-SMOOTH CAN BALANCE",
+    description:
+      "Label Over-Smoothing balances classifier logits to improve long-tailed recognition, particularly for minority classes.",
+    link: "https://openreview.net/pdf?id=OeKp3AdiVO",
+    year: "2025",
+    source: "ICLR",
+    noteDate: "2026-08-03",
+    reflection: [
+      "This paper revisits the classifier re-training stage of the decoupled training technique for long-tailed recognition. Previous methods modified both the feature extractor and the classifier simultaneously, making it difficult to determine if improvements actually came from classifier re-training. To address this, existing classifier re-training methods were evaluated using the same high-quality feature representations, then were introduced to two new analysis metrics: Logits Magnitude (LoMa), which measures the separation between the average true-class and non-true-class logits for each class, and Regularized Standard Deviation, which normalizes the logits’ standard deviation by LoMa. The best performing models exhibit balanced and relatively small logits magnitudes across head and tail classes, reducing the sensitivity minority-class predictions to noise. Based on the observation, Label Over-Smoothing (LOS) was introduced, a simple classifier re-training method that replaces one-hot labels with extremely smooth target distributions (using smoothing factors around 0.98-0.99). Unlike conventional label smoothing, LOS intentionally assigns probabilities close to uniform while still giving the correct class the highest probability, encouraging balanced logits without requiring prior knowledge of the class distribution.",
+      "The method achieved state-of-the-art performance on several standard long-tailed recognition benchmarks, including CIFAR100-LT, ImageNet-LT, and iNaturalist2018. On CIFAR100-LT, LOS improves over the previous state-of-the-art LTWB method by roughly 1–1.5%, while also providing improvements of approximately 0.5% on ImageNet-LT and 0.6% on iNaturalist2018. The gains are particularly pronounced for minority (“few”) classes, demonstrating that balancing logits improves tail-class recognition without sacrificing overall accuracy. Ablation studies showed that performance consistently improves as the smoothing factor increases, and that LOS is robust to hyperparameter choices. Since LOSS only modifies the classifier re-training stage, it can be used as a plug-and-play for existing long-tailed recognition methods, where it consistently improves their performance.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
