@@ -598,6 +598,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "random-hivemind-ensemble-deep-learning-solar-energetic-particle-prediction",
+    title:
+      "The Random Hivemind: An ensemble deep learning application to the solar energetic particle prediction problem",
+    description:
+      "Random Hivemind uses feature-importance-weighted neural network ensembles to predict SEP-producing solar flares.",
+    link: "https://www.sciencedirect.com/science/article/pii/S0273117724003934",
+    year: "2024",
+    source: "Advances in Space Research",
+    noteDate: "2026-08-07",
+    reflection: [
+      "The paper introduces the Random Hivemind (RH), an ensemble neural network method for predicting if a solar flare will produce an SEP event. The study uses 12 properties derived from GOES soft X-ray flare observations and evaluates the method on a highly imbalanced dataset, with 18,311 flares, only 64 of which are associated with SEPs. Rather than giving every neural network in the ensemble the same inputs, RH creates multiple estimators that each receive a randomly down-selected subset of features. Importantly, this selection is weighted by feature importance: each feature receives a score based on its chi-squared statistic and mutual information with SEP occurrence, and higher scoring features are more likely to get selected. The individual estimators’ learning rates, epoch counts, and voting contributions are then adjusted according to the importance of the features they are given. RH v1 gives each of the estimators 4 of 12 features, RH v2 gives 6 features, and they were compared against a standard single neural network and a 10-network ensemble in which every member received all 12 features. ",
+      "The ensemble approaches were more consistent across random train/test splits than the individual CoNN, and RH v2 produced the strongest overall results. Its median TSS was 0.944 ± 0.005, compared with 0.906 ± 0.042 for CoNN, 0.926 ± 0.023 for the Committee, and 0.915 ± 0.010 for RH v1; RH v2 also achieved 0.985 recall, 0.972 balanced accuracy, and approximately 0.991 ROC-AUC. Particularly important for SEP forecasting, RH v2 missed very few SEP-producing flares, averaging only 0.4 false negatives and producing a missed-event rate of about 1.7%; more than half of its trials had zero false negatives. However, precision and HSS remained relatively low because the extreme class imbalance caused roughly 225 false alarms for about 24 actual SEP events in an average test set.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
