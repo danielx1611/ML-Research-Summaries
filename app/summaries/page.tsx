@@ -613,6 +613,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "bce3s-binary-cross-entropy-based-tripartite-synergistic-learning-long-tailed-recognition",
+    title:
+      "BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition",
+    description:
+      "BCE3S combines binary cross-entropy, contrastive learning, and uniform classifier separation for long-tailed recognition.",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/37380",
+    year: "2026",
+    source: "AAAI",
+    noteDate: "2026-08-10",
+    reflection: [
+      "The paper proposes BCE3S (Binary Cross-Entropy Based Tripartite Synergistic Learning), a method for long-tailed recognition where some classes contain many training examples (head classes), while others contain very few (tail classes). Conventional cross-entropy training has two related problems: it can produce poorly balanced feature representations, and its softmax denominator couples the scores of all classes, allowing class imbalance to influence how features are learned. BCE3S instead uses binary cross-entropy with independent Sigmoid operations to reduce the coupling. The algorithm combines three learning objectives: joint learning, which simultaneously trains the sample features and classifier; contrastive learning, which pulls features from the same class together and pushes different classes apart; and uniform separability learning, which encourages classifier vectors to remain evenly separated rather than allowing tail-class classifiers to collapse together. These three losses are optimized together so that the feature representation and classifier improve each other during training. ",
+      "Experimentally, BCE3S produced both better feature geometry and state-of-the-art classification performance across CIFAR10-LT, CIFAR100-LT, ImageNet-LT, and iNaturalist2018. The ablation study reported the following: on CIFAR100-LT with an imbalance factor of 100, the CE baseline achieved 51.48% overall accuracy, BCE joint learning increased this to 52.88%, and the complete BCE3S method reached 55.99% in the ablation setting. With the full training strategy, BCE3S achieved 59.50%, 65.23%, and 76.13% on CIFAR100-LT at imbalance factors 100, 50, and 10, respectively, outperforming the previous best results in each case. It also reached 57.85% on ImageNet-LT and 75.91% on iNaturalist2018 with 400 epochs.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
