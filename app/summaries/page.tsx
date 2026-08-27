@@ -628,6 +628,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "feature-fusion-head-tail-long-tailed-visual-recognition",
+    title: "Feature Fusion from Head to Tail for Long-Tailed Visual Recognition",
+    description:
+      "H2T augments tail-class features with head-class channels to rebalance classifier decision boundaries in long-tailed visual recognition.",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/29262",
+    year: "2024",
+    source: "AAAI",
+    noteDate: "2026-08-27",
+    reflection: [
+      "The paper addresses the problem of long-tailed classification. Standard deep-learning models learn classifiers biased toward the head classes, mostly due to the tail data being limited. The paper proposes Head-To-Tail Fusion (H2T), a feature-level augmentation technique that transfers some of the richer semantic information available in head classes to tail classes. Training is performed in two stages: first, a backbone learns representations using the original instance-wise distribution; then the backbone is frozen and the classifier is adjusted using H2T. During this second stage, the method creates one class-balanced batch and one instance-wise batch, the latter naturally containing more head-class examples. It randomly replaces a fraction of the feature-map channels of samples from the balanced branch with channels from the instance-wise branch while retaining the balanced sample’s label. This repeatedly augments tail classes with head-class features, increasing their feature diversity and encouraging the classifier’s decision boundaries to allocate more space to tail classes. H2T requires no additional training data, changes neither the backbone architecture nor its parameter count, and can be added to existing single-model or multi-expert long-tail methods. Experiments generally showed improvements when H2T is added to existing methods. ",
+      "A major weakness of H2T is that it only adjusts the classifier’s decision boundary rather than improving the underlying learned representation. It assumes the first stage representation learning has already reached a decently good solution, but due to the backbone being frozen later, H2T cannot correct any deficiencies in the embedding space. There is also an inherent tradeoff: improving medium and tail class performance generally reduces head class accuracy. Increasing the fusion ratio p strengthens the effect. For example, on CIFAR100-LT, after p=0.3, head accuracy drops substantially. The method also contributes little to performance when other baselines already address decision-boundary bias well, such as GCL with its cosine classifier. A reasonable direction would be to try and jointly improve the frozen representation and the classifier distribution instead of just modifying the classifier. This might allow tail classes to learn better representations without requiring as much sacrifice for the head class performance.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
