@@ -642,6 +642,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "nested-collaborative-learning-long-tailed-visual-recognition",
+    title: "Nested Collaborative Learning for Long-Tailed Visual Recognition",
+    description:
+      "NCL combines nested individual learning and balanced online distillation across multiple experts for long-tailed visual recognition.",
+    link: "https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf",
+    year: "2022",
+    source: "CVPR",
+    noteDate: "2026-09-03",
+    reflection: [
+      "The paper proposes Nested Collaborative Learning (NCL), a multi-expert framework where several networks are trained concurrently and share knowledge with one another. NCL has two main components: Nested Individual Learning (NIL), which trains each expert using both all classes and a smaller set of difficult classes, and Nested Balanced Online Distillation (NBOD), which transfers knowledge between experts using the same class structure of all vs difficult classes. The difficult classes are selected through Hard Category Mining (HCM), which identifies non-ground-truth classes receiving oddly high prediction scores. The method incorporates balanced class probabilities and a self-supervised contrastive-learning component to improve representations. The combined objective encourages each expert to learn globally useful features, pay extra attention to confusing regions of the output space, and become more consistent across experts. The ablation study showed that the individual learning, self supervision, balanced online distillation, and ensemble components each contributed incremental performance gains.",
+      "The main limitation of NCL is its computational complexity, as concurrently training multiple experts together with self-supervision and online knowledge distillation requires additional GPU and CPU resources. Another weakness is the method’s Hard Category Mining strategy, which determines the difficult categories by selecting the incorrect classes receiving the highest prediction scores from the model. While the class is likely to be confusing for the current sample, a high prediction score doesn’t necessarily mean that the model is consistently performing badly in that category. To combat this, HCM could be improved by incorporating historical performance of a category either through error, uncertainty, or expert reliability so that training focuses more on categories that repeatedly cause prediction errors instead of just those receiving a high score for an individual sample. NCL’s combination of global learning with additional attention to difficult portions of the problem could be used to help identify difficult continuous target regions in imbalance regression and help give those regions additional training emphasis. The collaborative multi-expert approach could also allow common/rare range regression experts to exchange useful information during training without compromising their individual specializations.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
