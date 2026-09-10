@@ -656,6 +656,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "self-supervised-aggregation-diverse-experts-test-agnostic-long-tailed-recognition",
+    title:
+      "Self-Supervised Aggregation of Diverse Experts for Test-Agnostic Long-Tailed Recognition",
+    description:
+      "SADE self-supervisedly aggregates three distribution-specialized experts for test-agnostic long-tailed recognition.",
+    link: "https://proceedings.neurips.cc/paper_files/paper/2022/file/dc6319dde4fb182b22fb902da9418566-Paper-Conference.pdf",
+    year: "2022",
+    source: "NeurIPS",
+    noteDate: "2026-09-10",
+    reflection: [
+      "The paper uses test-agnostic long-tailed recognition, which is more difficult than long-tailed recognition since most existing methods implicitly optimize for a uniform test distribution and can perform poorly if the deployment distribution differs. To address this, the paper proposes Self-Supervised Aggregation of Diverse Experts (SADE), a three-expert ensemble with a shared backbone. Instead of merely encouraging experts to be different, SADE deliberately gives them different specialties through their training losses. There is a forward expert, which is trained with standard softmax favoring the majority classes, a uniform expert trained with Balanced Softmax which favors a balanced distribution, and a backward expert trained with a new inverse-softmax loss favors an inversely long-tailed distribution and few-shot classes. At test time, the experts are combined using learned aggregation weights. Since the test labels/distribution are unknown, SADE learns the weights self-supervisedly by applying two augmentations to each test image and maximizing the consistency of the ensemble’s predictions between the two views. This stems from the idea that an expert will produce more stable predictions on classes for which it has greater expertise. This allows the ensemble to prioritize experts that are more appropriate for the test distribution. ",
+      "A main limitation is that SADE’s robustness is dependent on having predefined experts who specialize on the possible test distributions. The method specifically constructs the three distribution preferences, which means that complicated or unexpected shifts in the test distribution might not be represented well by any particular expert. Also, they rely on the consistency of the model directly translates to expertise, which might not always be true, as the model could be consistently making similar bad predictions. SADE also performs test-time optimization of their aggregation weights, which introduces additional computational cost compared with a single fixed model. Having the experts specialize automatically could make the system more robust. Also, using more measures of expert reliability could make confidence more tied to predictive performance rather than just predictive consistency. Test-time adaptation could also possibly be reduced if they used a learned gating network or a faster form of weight estimation.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
