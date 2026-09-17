@@ -671,6 +671,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "balanced-product-calibrated-experts-long-tailed-recognition",
+    title: "Balanced Product of Calibrated Experts for Long-Tailed Recognition",
+    description:
+      "BalPoE combines calibrated experts with complementary logit adjustments for balanced long-tailed recognition.",
+    link: "https://openaccess.thecvf.com/content/CVPR2023/papers/Aimar_Balanced_Product_of_Calibrated_Experts_for_Long-Tailed_Recognition_CVPR_2023_paper.pdf",
+    year: "2023",
+    source: "CVPR",
+    noteDate: "2026-09-17",
+    reflection: [
+      "The paper proposes Balanced Product of Experts (BalPoE), an ensemble where individual experts are trained to specialize in different portions of the class distribution using different logit adjustments. Experts can target the original long-tailed distribution, a uniform distribution, or an inverse long-tailed distribution. The logits are averaged before softmax to produce the final prediction. If the experts’ biases were averaged appropriately, the combined ensemble will be Fisher-consistent for balanced error, meaning that the experts can be individually biased while their biases tend to cancel out in the ensemble. This result depends on the experts being properly calibrated, which was found to not be naturally satisfied by neural networks. Because of this, the paper used mixup during training to improve calibration without changing the underlying class prior required by the logit adjustments. ",
+      "The method’s theoretical guarantee assumes that label-distribution is the only change made to the data. The class frequencies can change between training and testing, but the distribution of features within each class is assumed to remain the same. Allowing the model to account for changes in the input distribution would make it more robust in some real-world settings. BalPoE also estimates the training class priors directly from the sample counts, which can produce very unreliable estimates if the training class is extremely rare. Accuracy was shown to improve as more experts are added, but that means much more computation was needed. Combining the experts to use a shared representation of some sort could help reduce how much computation needs to be done, speeding up training. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
