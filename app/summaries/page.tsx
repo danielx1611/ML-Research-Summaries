@@ -685,6 +685,21 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "solar-energetic-particle-forecasting-multi-task-deep-learning-sepnet",
+    title:
+      "Solar Energetic Particle Forecasting With Multi‐Task Deep Learning: SEPNET",
+    description:
+      "The paper proposes SEPNET, a multi-task deep-learning framework for forecasting SEP event occurrence in the next 24 hours.",
+    link: "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JH001247",
+    year: "2026",
+    source: "JGR Machine Learning and Computation",
+    noteDate: "2026-09-24",
+    reflection: [
+      "The paper proposes SEPNET, a multi-task deep-learning framework for forecasting SEP event occurrence in the next 24 hours. The inputs are summary statistics, such as the minimum, maximum, and mean from the previous 24 hours of different solar flare properties, CME properties, and SHARP photospheric magnetic-field parameters. The output is the probability of an SEP event occurring in the following 24 hours, while the model also performs auxiliary regression tasks that predict the number of flares and CMEs expected during that period. The basic SEPNET uses shared dense layers, while SEPNET-TS replaces these with an LSTM and transformer encoder to learning more complex relationships from the input features. The classification loss also contains binary cross-entropy with focal loss to address the strong SEP/non-SEP imbalance. On the SEPVAL benchmark, models using SHARP magnetic parameters, especially when combined with flare information, generally matched or exceeded existing pre-eruptive SEP models. ",
+      "The main limitation is that the SEP events are strongly imbalanced relative to non-SEP periods, causing SEPNET to produce fairly high false-alarm rates while improving event detection. The auxiliary tasks also had substantial error, meaning that those additional tasks could be affecting the shared representation and might need to be dropped or improved. Another direction could be that since it predicts auxiliary tasks already, such as the flare and CME count predictions, another auxiliary task could be to predict the SEP’s magnitude or duration instead of just its occurrence, which could give more information about the severity of a forecasted event. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
