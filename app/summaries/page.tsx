@@ -700,6 +700,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "contrastive-order-learning-general-framework-ordinal-regression",
+    title: "Contrastive Order Learning: A General Framework for Ordinal Regression",
+    description:
+      "ConOrd learns ordinal-regression embeddings using continuously weighted attraction and repulsion based on rank differences.",
+    link: "https://openreview.net/pdf?id=rUtcXHYnrN",
+    year: "2026",
+    source: "ICML",
+    noteDate: "2026-10-01",
+    reflection: [
+      "The paper proposes Contrastive Order Learning (ConOrd), which is a framework for ordinal regression, where the target values have a meaningful ordering and distance. Order-learning methods typically capture ordering but rely on local pairwise or margin-based comparisons. Contrastive learning methods use relationships across an entire batch but can treat samples too categorically and fail to represent how far apart their ranks actually are. ConOrd combines both approaches by learning an embedding space where samples with similar ranks are attracted and samples with distant ranks are repelled. Instead of just labeling pairs as positive or negative, it gives every pair in a batch a continuous affinity weight and disparity weight based on their rank difference, allowing the strength of attraction/repulsion to be based on the magnitude of that difference. A center loss is also used to make samples of the same rank cluster more compactly, and prediction is mainly performed using k-nearest neighbors in the embedded learning space.",
+      "Although ConOrd generalizes well across different problems, it performs worse when the training data poorly represents certain portions of the target distribution. Age predictions were becoming inaccurate when visual age cues were ambiguous or impacted by factors such as lighting, shadows, or poor texture contrasts, as well as in age ranges with less samples. Being able to better handle imbalance target distributions would be a major improvement for the technique. The default k-NN inference grows in cost as the size of the training set increases, so using an alternative classification or regression head could be better for runtime during inferencing. ",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
