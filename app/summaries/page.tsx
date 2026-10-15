@@ -729,6 +729,20 @@ const summaryTemplates = [
     ],
   },
   {
+    id: "decoupled-contrastive-learning-long-tailed-recognition",
+    title: "Decoupled Contrastive Learning for Long-Tailed Recognition",
+    description:
+      "Decoupled Supervised Contrastive Loss and Patch-Based Self Distillation improve representation learning for long-tailed recognition.",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/28459",
+    year: "2024",
+    source: "AAAI",
+    noteDate: "2026-10-15",
+    reflection: [
+      "Traditional Supervised Contrastive Learning (SCL) attempts to learn meaningful representations by pulling positive samples together and pushing negative samples apart. However, SCL treats two types of positive samples equally: augmented versions of the same image and other images belonging to the same class. This causes an imbalance in representation learning, as head classes tend to learn more meaningful semantic features while tail classes rely more heavily on low-level appearance features. To address this, the authors propose Decoupled Contrastive Learning, consisting of two main components. The first, Decoupled Supervised Contrastive Loss (DSCL), assigns separate weights to the two types of positive samples, preventing the number of samples in each class from disproportionately influencing their contributions to training. The second, Patch-Based Self Distillation (PBSD), identifies shared visual patterns between images of different classes and transfers this knowledge from head classes to tail classes through a self-distillation loss. The method uses a two-stage training process, first learning representations through DSCL and PBSD, then training a linear classifier using class-balanced sampling. Experiments demonstrated improvements across multiple long-tailed datasets, achieving 57.7% top-1 accuracy on ImageNet-LT compared to 51.2% using standard SCL, with further improvement to 59.7% when combined with an ensemble method. The method also achieved 72.0% accuracy on iNaturalist 2018 and 42.4% on Places-LT, demonstrating its effectiveness across different datasets.",
+      "DSCL relies on a fixed weighting parameter to control the relative importance of the two types of positive samples, which may not be optimal across different classes or levels of imbalance. An adaptive weighting strategy based on class frequency or representation quality could potentially improve performance by allowing the model to adjust its learning objectives for different classes. Similarly, PBSD assumes that shared visual patterns between head and tail classes provide useful transferable knowledge, but this may be less effective when classes have substantially different visual characteristics. Incorporating a similarity-based filtering mechanism could help ensure that knowledge is transferred only between sufficiently related classes, reducing the possibility of introducing misleading information. Finally, the method introduces additional computational overhead through patch extraction and self-distillation, which could potentially be reduced through more selective patch sampling. These improvements could further strengthen tail-class representations while maintaining the method's demonstrated performance on head classes.",
+    ],
+  },
+  {
     id: "paper-two",
     title: "Another Reading Note",
     description:
