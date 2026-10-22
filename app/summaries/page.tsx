@@ -757,6 +757,19 @@ const summaryTemplates = [
       "[Capture any insights, open questions, or follow-up ideas here.]",
     ],
   },
+  {
+    id: "a-tale-of-two-classes",
+    title: "A Tale of Two Classes: Adapting Supervised Contrastive Learning to Binary Imbalanced Datasets",
+    description: "Supervised Minority and Supervised Prototypes adapt supervised contrastive learning to improve representation learning on binary imbalanced datasets.",
+    link: "https://openaccess.thecvf.com/content/CVPR2025/papers/Mildenberger_A_Tale_of_Two_Classes_Adapting_Supervised_Contrastive_Learning_to_CVPR_2025_paper.pdf",
+    year: "2025",
+    source: "CVPR",
+    noteDate: "2026-10-22",
+    reflection: [
+      "This paper investigates the limitations of supervised contrastive learning (SupCon) when applied to binary imbalanced classification problems. While SupCon typically learns useful representations by pulling samples of the same class closer together and pushing samples of different classes apart, the authors demonstrate that severe class imbalance can cause the learned representations to collapse into a small region, making the classes difficult to distinguish. To better identify this issue, they introduce two new evaluation metrics, Sample Alignment Accuracy (SAA) and Class Alignment Consistency (CAC), which measure how well individual samples and different classes are separated in the representation space. They also propose two modifications to SupCon: Supervised Minority, which applies supervised contrastive learning only to the minority class while using unsupervised contrastive learning for the majority class, and Supervised Prototypes, which introduces fixed prototypes at opposite ends of the representation space to encourage class separation. Experiments across seven natural and medical imaging datasets demonstrate that these approaches improve classification performance by up to 35 percentage points over standard SupCon and outperform existing methods designed for long-tailed datasets by up to approximately 5 percentage points. Supervised Minority generally performs best on natural image datasets, while Supervised Prototypes performs best on most medical datasets.",
+      "One limitation of the proposed methods is that Supervised Minority cannot be applied to balanced datasets, since it specifically requires a minority and majority class. Additionally, neither proposed approach consistently outperforms the other across all datasets, making it difficult to determine which method should be used for a particular problem without testing both. The authors suggest that these differences may be caused by characteristics of the datasets or the degree of class imbalance, but they do not establish a clear relationship. Another limitation is that the experiments focus exclusively on binary image classification, leaving the effectiveness of these approaches on other types of data or classification problems unexplored. Possible improvements could include developing an adaptive method that selects or combines the two strategies based on the dataset's characteristics and imbalance ratio, as well as evaluating whether the methods generalize to tabular datasets or problems involving more than two classes. Overall, the paper demonstrates that standard supervised contrastive learning struggles with binary class imbalance and that relatively simple modifications to its training objective can significantly improve the learned representations and downstream classification performance.",
+    ],
+  },
 ];
 
 const sortedSummaryTemplates = [...summaryTemplates].sort((a, b) => {
